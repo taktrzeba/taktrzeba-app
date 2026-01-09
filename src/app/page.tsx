@@ -16,12 +16,12 @@ export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    name: 'Tydzień Rzemiosła - Wakacyjny kurs praktyczny dla młodzieży',
+    name: 'tak trzeba - Wakacyjny kurs praktyczny dla młodzieży',
     description: 'Praktyczny kurs rzemieślniczy dla młodzieży 14-16 lat. Stolarka, elektryka, hydraulika i mechanika rowerowa. 5 dni intensywnej nauki przez praktykę.',
     provider: {
       '@type': 'Organization',
-      name: 'Tydzień Rzemiosła',
-      url: 'https://tydzienrzemiosla.pl'
+      name: 'tak trzeba',
+      url: 'https://taktrzeba.pl'
     },
     hasCourseInstance: [
       {

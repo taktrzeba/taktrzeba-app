@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tydzień Rzemiosła - Wakacyjny kurs praktyczny dla młodzieży 14-16 lat | Stolarka, Elektryka, Hydraulika",
+  title: "tak trzeba - Wakacyjny kurs praktyczny dla młodzieży 14-16 lat | taktrzeba.pl | Stolarka, Elektryka, Hydraulika",
   description: "Praktyczne kursy zawodowe dla młodzieży 14-16 lat w Polsce. Stolarka, elektryka, hydraulika, mechanika rowerowa. 5 dni intensywnej nauki przez praktykę. Wakacje z sensem bez telefonów.",
   keywords: [
     "kursy zawodowe dla młodzieży",
@@ -29,23 +29,23 @@ export const metadata: Metadata = {
     "rzemiosło dla młodzieży",
     "kursy bez telefonów"
   ],
-  authors: [{ name: "Tydzień Rzemiosła" }],
-  creator: "Tydzień Rzemiosła",
-  publisher: "Tydzień Rzemiosła",
+  authors: [{ name: "tak trzeba" }],
+  creator: "tak trzeba",
+  publisher: "tak trzeba",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://tydzienrzemiosla.pl'),
+  metadataBase: new URL('https://taktrzeba.pl'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Tydzień Rzemiosła - Wakacyjny kurs praktyczny dla młodzieży",
+    title: "tak trzeba - Wakacyjny kurs praktyczny dla młodzieży",
     description: "Praktyczne kursy zawodowe dla młodzieży 14-16 lat. Stolarka, elektryka, hydraulika, mechanika rowerowa. 5 dni intensywnej nauki przez praktykę.",
-    url: 'https://tydzienrzemiosla.pl',
-    siteName: 'Tydzień Rzemiosła',
+    url: 'https://taktrzeba.pl',
+    siteName: 'tak trzeba',
     locale: 'pl_PL',
     type: 'website',
     images: [
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Tydzień Rzemiosła - Kursy praktyczne dla młodzieży',
+        alt: 'tak trzeba - Kursy praktyczne dla młodzieży',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tydzień Rzemiosła - Wakacyjny kurs praktyczny dla młodzieży",
+    title: "tak trzeba - Wakacyjny kurs praktyczny dla młodzieży",
     description: "Praktyczne kursy zawodowe dla młodzieży 14-16 lat. 5 dni intensywnej nauki przez praktykę.",
     images: ['/og-image.jpg'],
   },

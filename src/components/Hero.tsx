@@ -1,6 +1,14 @@
 import Image from 'next/image';
+import { coursesSyllabus } from '@/data/coursesSyllabus';
 
 export default function Hero() {
+  const courseLinks = [
+    { id: 'kurs-mechanik-rowerowy', name: 'Mechanik Rowerowy' },
+    { id: 'kurs-stolarka', name: 'Stolarka' },
+    { id: 'kurs-hydraulika', name: 'Hydraulika' },
+    { id: 'kurs-elektryka', name: 'Elektryka' }
+  ];
+
   return (
     <section className="hero-section">
       {/* Animated background gradient */}
@@ -10,8 +18,8 @@ export default function Hero() {
       <div className="hero-images-background">
         <div className="hero-image-item fade-in delay-1">
           <Image 
-            src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=500&h=400&fit=crop&q=80" 
-            alt="Młodzież przy warsztacie" 
+            src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=500&h=400&fit=crop&q=80" 
+            alt="Narzędzia warsztatowe - klucze i narzędzia" 
             width={500} 
             height={400}
             className="hero-bg-img"
@@ -20,8 +28,8 @@ export default function Hero() {
         </div>
         <div className="hero-image-item fade-in delay-2">
           <Image 
-            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500&h=400&fit=crop&q=80" 
-            alt="Praca z narzędziami" 
+            src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=500&h=400&fit=crop&q=80" 
+            alt="Praca przy drewnie - stolarka" 
             width={500} 
             height={400}
             className="hero-bg-img"
@@ -30,7 +38,7 @@ export default function Hero() {
         <div className="hero-image-item fade-in delay-3">
           <Image 
             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop&q=80" 
-            alt="Mechanika rowerowa" 
+            alt="Naprawa roweru - mechanika" 
             width={500} 
             height={400}
             className="hero-bg-img"
@@ -38,8 +46,8 @@ export default function Hero() {
         </div>
         <div className="hero-image-item fade-in delay-4">
           <Image 
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=400&fit=crop&q=80" 
-            alt="Praca warsztatowa" 
+            src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=500&h=400&fit=crop&q=80" 
+            alt="Praca techniczna - elektryka" 
             width={500} 
             height={400}
             className="hero-bg-img"
@@ -116,8 +124,25 @@ export default function Hero() {
             </a>
           </div>
 
+          {/* Szybkie linki do kursów */}
+          <div className="hero-course-quick-links fade-in delay-6">
+            <p className="quick-links-label">Przejdź do kursu:</p>
+            <div className="quick-links-grid">
+              {coursesSyllabus.map((course, index) => (
+                <a 
+                  key={index}
+                  href={`#${courseLinks[index].id}`}
+                  className="quick-link-item"
+                >
+                  <span className="quick-link-icon">{course.icon}</span>
+                  <span className="quick-link-name">{course.name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
           {/* Trust indicators */}
-          <div className="hero-trust fade-in delay-6">
+          <div className="hero-trust fade-in delay-7">
             <div className="trust-item">
               <span className="trust-icon">✓</span>
               <span>Bezpieczne warsztaty</span>
@@ -133,7 +158,7 @@ export default function Hero() {
           </div>
 
           {/* Urgency banner */}
-          <div className="hero-urgency-banner fade-in delay-7">
+          <div className="hero-urgency-banner fade-in delay-8">
             <span className="urgency-icon pulse-animation">⚡</span>
             <span className="urgency-text">
               <strong>Limitowana liczba miejsc!</strong> Tylko 12 uczestników w grupie – rezerwuj już teraz

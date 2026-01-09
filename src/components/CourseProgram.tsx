@@ -2,9 +2,17 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { coursesSyllabus } from '@/data/coursesSyllabus';
 
 export default function CourseProgram() {
   const sectionRef = useRef<HTMLElement>(null);
+
+  const courseLinks = [
+    'kurs-mechanik-rowerowy',
+    'kurs-stolarka',
+    'kurs-hydraulika',
+    'kurs-elektryka'
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,81 +32,26 @@ export default function CourseProgram() {
     return () => observer.disconnect();
   }, []);
 
-  const courses = [
-    {
-      icon: '🔧',
-      title: 'Mechanik rowerowy',
-      subtitle: '„Zrozum, jak działa ruch"',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop&q=80',
-      why: 'Najniższy próg wejścia. Szybkie efekty. Zero strachu.',
-      learns: [
-        'jak zbudowany jest rower',
-        'jak działają hamulce i przerzutki',
-        'jak naprawić przebitą dętkę',
-        'jak diagnozować usterki'
-      ],
-      practice: [
-        'rozbieranie i składanie roweru',
-        'regulacja napędu',
-        'pełny serwis techniczny'
-      ],
-      result: 'Rower gotowy do jazdy + poczucie „umiem to".'
-    },
-    {
-      icon: '🪚',
-      title: 'Stolarka',
-      subtitle: '„Z kawałka drewna do prawdziwego przedmiotu"',
-      image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=400&fit=crop&q=80',
-      learns: [
-        'pracy z naturalnym materiałem',
-        'mierzenia, planowania i precyzji',
-        'obsługi narzędzi ręcznych',
-        'cierpliwości i skupienia'
-      ],
-      practice: [
-        'cięcie i szlifowanie drewna',
-        'łączenie elementów',
-        'wykonanie prostego projektu (np. półka, skrzynka, stołek)'
-      ],
-      result: 'Gotowy, własnoręcznie wykonany przedmiot z drewna.'
-    },
-    {
-      icon: '🚰',
-      title: 'Hydraulika',
-      subtitle: '„Każdy dom tego potrzebuje"',
-      image: 'https://images.unsplash.com/photo-1607400201515-c2c41c07d307?w=800&h=400&fit=crop&q=80',
-      learns: [
-        'jak działa instalacja wodna w domu',
-        'czym są rury, zawory, syfony',
-        'jak uszczelniać połączenia',
-        'jak naprawić przeciek'
-      ],
-      practice: [
-        'montaż i demontaż elementów instalacji',
-        'skręcanie rur',
-        'symulowane awarie i ich naprawa'
-      ],
-      result: 'Działająca instalacja demo + brak strachu przed „usterką".'
-    },
-    {
-      icon: '🔌',
-      title: 'Elektryka',
-      subtitle: '„Prąd przestaje być magią"',
-      image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=400&fit=crop&q=80',
-      learns: [
-        'podstaw bezpieczeństwa',
-        'jak działa obwód elektryczny',
-        'czym różni się faza, neutralny i uziemienie',
-        'jak czytać prosty schemat'
-      ],
-      practice: [
-        'montaż gniazdka i włącznika',
-        'podłączanie oświetlenia',
-        'budowa działającego obwodu na stanowisku szkoleniowym'
-      ],
-      result: 'Działająca instalacja elektryczna + ogromny wzrost pewności siebie.'
-    }
-  ];
+  // Mapujemy dane z syllabusa na format używany w tym komponencie
+  const courses = coursesSyllabus.map((course) => {
+    const imageMap: { [key: string]: string } = {
+      '🔧': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop&q=80',
+      '🪚': 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&h=400&fit=crop&q=80',
+      '🚰': 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=400&fit=crop&q=80',
+      '⚡': 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&h=400&fit=crop&q=80'
+    };
+
+    return {
+      icon: course.icon,
+      title: course.name,
+      subtitle: course.goal,
+      image: imageMap[course.icon] || imageMap['🔧'],
+      why: `Praktyczna nauka przez 5 dni - ${course.days.length} konkretnych tematów`,
+      learns: course.days.slice(0, 4).map(day => day.title.toLowerCase()),
+      practice: course.mainTools.slice(0, 3),
+      result: `Ukończony projekt + umiejętności z zakresu: ${course.name.toLowerCase()}`
+    };
+  });
 
   return (
     <section id="program" className="course-program-section" ref={sectionRef}>
@@ -154,7 +107,13 @@ export default function CourseProgram() {
                 </div>
 
                 <div className="course-result">
-                  <strong>Efekt dnia:</strong> {course.result}
+                  <strong>Efekt:</strong> {course.result}
+                </div>
+
+                <div className="course-link-wrapper">
+                  <a href={`#${courseLinks[index]}`} className="btn btn-outline">
+                    Zobacz szczegółowy program →
+                  </a>
                 </div>
               </div>
             </article>

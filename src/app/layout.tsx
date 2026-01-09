@@ -77,6 +77,12 @@ export const metadata: Metadata = {
   verification: {
     google: 'verification_token', // Dodaj po weryfikacji w Google Search Console
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
 };
 
 export default function RootLayout({

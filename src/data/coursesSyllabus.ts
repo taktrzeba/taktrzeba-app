@@ -2,197 +2,304 @@ export interface DayContent {
   title: string;
   skills: string[];
   tools: string[];
+  techniques: string[];
+  methods: string[];
 }
 
 export interface CourseData {
   icon: string;
   name: string;
   goal: string;
-  days: DayContent[];
   mainTools: string[];
+  days: DayContent[];
 }
 
 export const coursesSyllabus: CourseData[] = [
   {
     icon: '🔧',
     name: 'MECHANIK ROWEROWY',
-    goal: 'nauczyć logicznej diagnostyki i podstaw mechaniki ruchu',
+    goal: 'Rozwinięcie logicznej diagnostyki technicznej, zrozumienie mechaniki ruchu oraz samodzielnej obsługi i serwisu roweru.',
     mainTools: [
       'stojak serwisowy rowerowy (regulowany)',
-      'zestaw kluczy imbusowych: 2 / 2.5 / 3 / 4 / 5 / 6 / 8 mm',
-      'klucze płaskie: 8 / 10 / 13 / 15 mm',
-      'łyżki do opon (plastikowe)',
-      'pompka ręczna i pompka podłogowa z manometrem',
+      'zestaw kluczy imbusowych 2–8 mm',
+      'klucze płaskie 8 / 10 / 13 / 15 mm',
+      'łyżki do opon (tworzywo)',
+      'pompka ręczna i podłogowa z manometrem',
       'szczypce uniwersalne',
-      'smar do łańcucha i czyścik do łańcucha'
+      'śrubokręty płaskie i krzyżakowe',
+      'smar do łańcucha',
+      'czyścik i szczotki do napędu'
     ],
     days: [
       {
-        title: 'Budowa roweru i stanowisko pracy',
+        title: 'Dzień 1 – Budowa roweru i organizacja stanowiska',
         skills: [
-          'identyfikacja głównych podzespołów roweru',
-          'rozróżnianie elementów stałych i regulowanych',
-          'bezpieczne mocowanie roweru w stojaku',
-          'prawidłowe trzymanie i odkładanie narzędzi',
-          'organizacja stanowiska pracy'
+          'identyfikacja wszystkich głównych podzespołów roweru',
+          'rozróżnianie elementów stałych, regulowanych i eksploatacyjnych',
+          'bezpieczne osadzanie roweru w stojaku serwisowym',
+          'prawidłowa organizacja stanowiska pracy',
+          'świadome i bezpieczne operowanie narzędziami'
         ],
         tools: [
           'stojak serwisowy',
-          'zestaw kluczy imbusowych (2–8 mm)',
-          'klucze płaskie (8–15 mm)',
-          'śrubokręty płaskie i krzyżakowe',
-          'smary techniczne (pokaz zastosowania)'
+          'klucze imbusowe',
+          'klucze płaskie',
+          'śrubokręty'
+        ],
+        techniques: [
+          'analiza konstrukcji mechanicznej',
+          'praca sekwencyjna',
+          'zasady ergonomii'
+        ],
+        methods: [
+          'instruktaż demonstracyjny',
+          'samodzielna eksploracja podzespołów',
+          'praca indywidualna z korektą instruktora'
         ]
       },
       {
-        title: 'Koła, opony, dętki',
+        title: 'Dzień 2 – Koła, opony i dętki',
         skills: [
-          'demontaż i montaż koła',
-          'zdejmowanie opony bez jej uszkodzenia',
-          'lokalizowanie przebicia',
-          'prawidłowe osadzanie dętki',
-          'kontrola ciśnienia i centryczności koła'
+          'demontaż i montaż kół',
+          'zdejmowanie i zakładanie opony bez uszkodzeń',
+          'lokalizacja i naprawa przebicia dętki',
+          'kontrola i regulacja ciśnienia',
+          'ocena stanu obręczy i osi'
         ],
         tools: [
-          'łyżki do opon (plastikowe)',
-          'pompki ręczne i podłogowe',
+          'łyżki do opon',
+          'pompki z manometrem',
           'zestawy naprawcze',
-          'klucz do osi kół (15 mm)'
+          'klucz do osi kół'
+        ],
+        techniques: [
+          'praca na elementach elastycznych',
+          'kontrola naprężeń',
+          'testy funkcjonalne'
+        ],
+        methods: [
+          'ćwiczenia powtarzalne',
+          'symulacja usterek',
+          'samodzielne wykonanie pełnej procedury'
         ]
       },
       {
-        title: 'Hamulce',
+        title: 'Dzień 3 – Hamulce i bezpieczeństwo',
         skills: [
-          'rozróżnianie typów hamulców',
+          'rozróżnianie systemów hamulcowych',
           'regulacja siły hamowania',
           'ustawianie symetrii klocków',
-          'testowanie skuteczności',
-          'rozumienie konsekwencji błędnej regulacji'
+          'testowanie skuteczności hamulców',
+          'ocena wpływu regulacji na bezpieczeństwo'
         ],
         tools: [
           'klucze imbusowe',
           'szczypce',
-          'klucze regulacyjne',
+          'narzędzia regulacyjne',
           'stanowisko testowe'
+        ],
+        techniques: [
+          'regulacja precyzyjna',
+          'testy dynamiczne',
+          'kontrola tolerancji'
+        ],
+        methods: [
+          'instruktaż krok po kroku',
+          'samodzielna regulacja',
+          'testy praktyczne'
         ]
       },
       {
-        title: 'Napęd i przerzutki',
+        title: 'Dzień 4 – Napęd i przerzutki',
         skills: [
-          'regulacja zakresu pracy przerzutki',
-          'napięcie linki',
-          'ustawianie precyzji zmiany biegów',
-          'diagnozowanie typowych usterek',
-          'cierpliwa korekta błędów'
+          'regulacja zakresów pracy przerzutek',
+          'ustawianie napięcia linek',
+          'diagnozowanie problemów z napędem',
+          'czyszczenie i konserwacja elementów ruchomych',
+          'cierpliwa korekta błędów regulacji'
         ],
         tools: [
           'klucze imbusowe',
           'śrubokręty precyzyjne',
-          'smary do napędu',
-          'czyściki techniczne'
+          'smary techniczne',
+          'czyściki do napędu'
+        ],
+        techniques: [
+          'regulacja iteracyjna',
+          'obserwacja mechanizmu w ruchu',
+          'diagnostyka przyczynowo-skutkowa'
+        ],
+        methods: [
+          'ćwiczenia problemowe',
+          'analiza błędów',
+          'samodzielna korekta'
         ]
       },
       {
-        title: 'Pełny serwis',
+        title: 'Dzień 5 – Pełny serwis i test końcowy',
         skills: [
-          'planowanie kolejności prac',
-          'kontrola całościowa',
-          'test końcowy',
-          'odpowiedzialność za efekt'
+          'planowanie kolejności prac serwisowych',
+          'kompleksowa kontrola techniczna roweru',
+          'test funkcjonalny całości',
+          'odpowiedzialność za efekt końcowy',
+          'prezentacja wykonanej pracy'
         ],
         tools: [
-          'wszystkie narzędzia z poprzednich dni',
+          'pełen zestaw narzędzi serwisowych',
           'checklista kontrolna',
           'stanowisko testowe'
+        ],
+        techniques: [
+          'praca kompleksowa',
+          'kontrola jakości',
+          'test końcowy'
+        ],
+        methods: [
+          'samodzielny projekt serwisowy',
+          'ocena instruktorska',
+          'omówienie efektów'
         ]
       }
     ]
   },
+
   {
     icon: '🪚',
     name: 'STOLARKA',
-    goal: 'precyzja, cierpliwość, planowanie pracy',
+    goal: 'Rozwinięcie precyzji, cierpliwości i planowania pracy poprzez praktyczną obróbkę drewna.',
     mainTools: [
-      'miarka stalowa (3–5 m)',
+      'miarka stalowa 3–5 m',
       'kątownik stolarski',
+      'ołówek stolarski',
       'piła ręczna do drewna',
       'piła grzbietnica',
-      'papier ścierny (80 / 120 / 180)',
+      'papier ścierny 80 / 120 / 180',
+      'klocek szlifierski',
       'wkrętarka akumulatorowa',
+      'wiertła do drewna 3–8 mm',
       'ściski stolarskie',
       'imadło warsztatowe'
     ],
     days: [
       {
-        title: 'Materiał i pomiary',
+        title: 'Dzień 1 – Drewno, pomiary i planowanie',
         skills: [
-          'rozpoznawanie rodzaju drewna',
-          'pomiar i trasowanie',
-          'czytanie prostego rysunku technicznego',
-          'bezpieczne trzymanie narzędzi'
+          'rozpoznawanie gatunków drewna',
+          'prawidłowe pomiary i trasowanie',
+          'czytanie prostych rysunków technicznych',
+          'bezpieczna obsługa narzędzi ręcznych'
         ],
         tools: [
           'miarki stalowe',
           'kątowniki',
           'ołówki stolarskie',
-          'piły ręczne',
           'imadła'
+        ],
+        techniques: [
+          'trasowanie',
+          'planowanie pracy',
+          'kontrola wymiarów'
+        ],
+        methods: [
+          'instruktaż praktyczny',
+          'ćwiczenia indywidualne',
+          'korekta instruktorska'
         ]
       },
       {
-        title: 'Cięcie i obróbka',
+        title: 'Dzień 2 – Cięcie i obróbka powierzchni',
         skills: [
           'prowadzenie cięcia po linii',
-          'kontrola siły nacisku',
+          'kontrola nacisku i stabilności',
           'szlifowanie płaszczyzn i krawędzi',
-          'korygowanie błędów'
+          'korygowanie niedokładności'
         ],
         tools: [
           'piły ręczne',
-          'papier ścierny (różne gradacje: 80 / 120 / 180)',
+          'papier ścierny',
           'klocki szlifierskie',
-          'ściski stolarskie'
+          'ściski'
+        ],
+        techniques: [
+          'cięcie kontrolowane',
+          'obróbka stopniowa',
+          'wykańczanie powierzchni'
+        ],
+        methods: [
+          'ćwiczenia powtarzalne',
+          'samodzielna praca',
+          'analiza błędów'
         ]
       },
       {
-        title: 'Łączenia',
+        title: 'Dzień 3 – Łączenia stolarskie',
         skills: [
           'planowanie kolejności montażu',
           'wiercenie otworów prowadzących',
-          'wkręcanie bez rozszczepienia drewna',
+          'wkręcanie bez rozszczepienia materiału',
           'stabilizacja konstrukcji'
         ],
         tools: [
           'wkrętarki',
-          'wiertła do drewna (3–8 mm)',
-          'wkręty do drewna',
+          'wiertła do drewna',
+          'wkręty',
           'ściski'
+        ],
+        techniques: [
+          'łączenie mechaniczne',
+          'kontrola osiowości',
+          'wzmacnianie konstrukcji'
+        ],
+        methods: [
+          'praca projektowa',
+          'montaż etapowy',
+          'kontrola instruktorska'
         ]
       },
       {
-        title: 'Montaż i wykończenie (Dzień 4)',
+        title: 'Dzień 4 – Montaż i korekty',
         skills: [
-          'składanie konstrukcji',
-          'korekta niedokładności',
-          'estetyczne wykończenie'
+          'składanie kompletnej konstrukcji',
+          'korygowanie błędów montażowych',
+          'przygotowanie do wykończenia'
         ],
         tools: [
-          'wszystkie narzędzia montażowe',
+          'narzędzia montażowe',
           'klej stolarski',
           'papier ścierny wykończeniowy'
+        ],
+        techniques: [
+          'montaż finalny',
+          'korekta precyzyjna',
+          'wykańczanie'
+        ],
+        methods: [
+          'samodzielna realizacja',
+          'konsultacje z instruktorem',
+          'kontrola jakości'
         ]
       },
       {
-        title: 'Projekt końcowy (Dzień 5)',
+        title: 'Dzień 5 – Projekt końcowy i prezentacja',
         skills: [
           'samodzielna realizacja projektu',
-          'kontrola jakości',
+          'kontrola jakości wykonania',
           'ocena własnej pracy',
-          'prezentacja efektu'
+          'prezentacja gotowego przedmiotu'
         ],
         tools: [
           'pełny warsztat stolarski',
-          'materiały do wykończenia'
+          'materiały wykończeniowe'
+        ],
+        techniques: [
+          'wykończenie estetyczne',
+          'kontrola końcowa',
+          'dokumentacja pracy'
+        ],
+        methods: [
+          'projekt indywidualny',
+          'omówienie efektów',
+          'prezentacja pracy'
         ]
       }
     ]
@@ -200,173 +307,313 @@ export const coursesSyllabus: CourseData[] = [
   {
     icon: '🚰',
     name: 'HYDRAULIKA',
-    goal: 'samodzielność i myślenie przyczynowo–skutkowe',
+    goal: 'Samodzielność w podstawowych pracach hydraulicznych, myślenie przyczynowo–skutkowe, diagnoza usterek i kontrola szczelności.',
     mainTools: [
-      'klucz nastawny (mały i średni)',
-      'klucz hydrauliczny („żabka")',
+      'klucz nastawny 6–8" (mały) i 10–12" (średni)',
+      'klucz hydrauliczny nastawny („żabka")',
+      'szczypce nastawne typu „cobra"',
       'szczypce uniwersalne',
-      'nożyce do rur plastikowych',
+      'śrubokręt płaski',
+      'nożyce do rur z tworzyw (PEX/PVC)',
+      'obcinak do rur',
+      'taśma teflonowa (PTFE)',
+      'pasta/nić uszczelniająca (pokaz)',
       'rury PVC / PEX (szkoleniowe)',
-      'złączki i syfony',
-      'taśma teflonowa',
-      'instalacja wodna demo'
+      'złączki, kolanka, trójniki (szkoleniowe)',
+      'syfony (butelkowy i rurowy) oraz elementy odpływu',
+      'zawory odcinające (kulowe) i uszczelki',
+      'instalacja wodna demo w obiegu zamkniętym'
     ],
     days: [
       {
-        title: 'System wodny',
+        title: 'Dzień 1 – Instalacja wodna w domu i zasady bezpieczeństwa',
         skills: [
-          'rozumienie obiegu wody',
-          'rozpoznawanie elementów instalacji',
-          'bezpieczna praca z wodą'
+          'rozpoznawanie elementów instalacji: doprowadzenie, zawory, odpływ',
+          'rozumienie różnicy: woda pod ciśnieniem vs grawitacyjny odpływ',
+          'prawidłowe użycie klucza nastawnego i szczypiec nastawnych',
+          'ochrona stanowiska pracy przed zalaniem',
+          'zasada: zakręć–spuść–rozkręć–zmontuj–testuj'
         ],
         tools: [
-          'klucze nastawne',
-          'szczypce',
-          'modele instalacji'
+          'klucz nastawny (mały/średni)',
+          'klucz hydrauliczny („żabka")',
+          'szczypce nastawne typu „cobra"',
+          'modele instalacji i instalacja demo'
+        ],
+        techniques: [
+          'praca sekwencyjna',
+          'kontrola momentu dokręcenia',
+          'organizacja stanowiska mokrego'
+        ],
+        methods: [
+          'instruktaż demonstracyjny na instalacji demo',
+          'ćwiczenia na „suchych" łączeniach',
+          'test szczelności po każdym kroku'
         ]
       },
       {
-        title: 'Połączenia',
+        title: 'Dzień 2 – Rury i połączenia: uszczelnianie i szczelność',
         skills: [
-          'skręcanie rur',
-          'uszczelnianie połączeń',
-          'kontrola szczelności'
+          'przygotowanie połączeń i kontrola gwintu',
+          'prawidłowe stosowanie taśmy PTFE',
+          'dobór i kontrola uszczelek',
+          'składanie prostych odcinków instalacji (linia + kolanko + trójnik)',
+          'wykrywanie mikrowycieków i poprawki'
         ],
         tools: [
-          'taśmy teflonowe',
-          'klucze hydrauliczne',
-          'rury i złączki'
+          'taśma teflonowa (PTFE)',
+          'rury i złączki szkoleniowe',
+          'klucz nastawny',
+          'szczypce nastawne'
+        ],
+        techniques: [
+          'uszczelnianie gwintów',
+          'kontrola szczelności',
+          'praca z tolerancjami połączeń'
+        ],
+        methods: [
+          'praca w parach (kontrola wzajemna)',
+          'checklista szczelności',
+          'symulowane błędy: za mało/za dużo PTFE'
         ]
       },
       {
-        title: 'Syfony i zawory',
+        title: 'Dzień 3 – Syfony, odpływy i zasada spadku',
         skills: [
-          'montaż i demontaż',
-          'czyszczenie',
-          'poprawne ustawienie spadków'
+          'rozróżnianie syfonu butelkowego i rurowego',
+          'montaż i demontaż syfonu',
+          'prawidłowe ustawienie spadku odpływu',
+          'czyszczenie syfonu i diagnoza „zapachu" / zatorów',
+          'dobór uszczelek i dokręcenie bez pęknięć'
         ],
         tools: [
-          'syfony',
-          'zawory',
+          'syfony szkoleniowe',
           'uszczelki gumowe',
-          'nożyce do rur'
+          'nożyce do rur',
+          'klucz nastawny',
+          'śrubokręt płaski'
+        ],
+        techniques: [
+          'montaż odpływów',
+          'kontrola spadków',
+          'test przepływu'
+        ],
+        methods: [
+          'ćwiczenia na makiecie „zlew + odpływ"',
+          'symulacje usterek (nieszczelność, zator)',
+          'testy przepływu i szczelności'
         ]
       },
       {
-        title: 'Awarie i diagnostyka (Dzień 4)',
+        title: 'Dzień 4 – Awarie i diagnostyka: przeciek, kapanie, brak przepływu',
         skills: [
-          'diagnoza przecieków',
-          'logiczne usuwanie problemów',
-          'naprawa typowych usterek'
+          'lokalizacja źródła przecieku w instalacji demo',
+          'dobór metody naprawy: uszczelka / uszczelnienie / dokręcenie / wymiana elementu',
+          'bezpieczne rozłożenie i ponowny montaż połączenia',
+          'weryfikacja naprawy przez test szczelności i przepływu',
+          'dokumentowanie naprawy: co było przyczyną i co zrobiono'
         ],
         tools: [
-          'instalacja demo',
-          'narzędzia naprawcze',
-          'pojemniki na wodę'
+          'instalacja wodna demo',
+          'pojemniki na wodę i chłonne maty',
+          'klucze nastawne',
+          'szczypce nastawne',
+          'taśma PTFE',
+          'zapasowe uszczelki'
+        ],
+        techniques: [
+          'diagnostyka przyczynowo-skutkowa',
+          'praca iteracyjna (test–popraw–test)',
+          'kontrola szczelności pod ciśnieniem'
+        ],
+        methods: [
+          'zadania problemowe (scenariusze awarii)',
+          'praca w małych zespołach',
+          'omówienie przyczyn i dobrych praktyk'
         ]
       },
       {
-        title: 'Instalacja demo (Dzień 5)',
+        title: 'Dzień 5 – Projekt końcowy: kompletna instalacja i odbiór',
         skills: [
-          'montaż kompletnej instalacji',
-          'test końcowy',
-          'odpowiedzialność za szczelność',
-          'dokumentacja pracy'
+          'złożenie kompletnego układu: zawór odcinający + odcinek rury + rozgałęzienie + odpływ',
+          'planowanie kolejności montażu',
+          'test szczelności i test przepływu według checklisty',
+          'korekta błędów na podstawie obserwacji',
+          'odpowiedzialność za efekt końcowy i prezentacja'
         ],
         tools: [
-          'wszystkie narzędzia hydrauliczne',
-          'pełna instalacja wodna demo'
+          'pełny zestaw narzędzi hydraulicznych',
+          'instalacja wodna demo',
+          'checklista odbioru',
+          'zapasowe elementy: uszczelki, złączki, PTFE'
+        ],
+        techniques: [
+          'montaż kompleksowy',
+          'kontrola jakości',
+          'procedura odbioru (testy końcowe)'
+        ],
+        methods: [
+          'projekt zespołowy z podziałem ról',
+          'odbiór techniczny przez instruktora',
+          'prezentacja: jak działa układ i jak go testowano'
         ]
       }
     ]
   },
+
   {
     icon: '⚡',
     name: 'ELEKTRYKA',
-    goal: 'zrozumienie zasad i odpowiedzialność',
+    goal: 'Zrozumienie zasad działania obwodu, bezpieczna praca na stanowisku szkoleniowym oraz odpowiedzialność za poprawność połączeń i testów.',
     mainTools: [
-      'śrubokręty izolowane (płaski i krzyżakowy)',
-      'szczypce izolowane',
-      'obcinaczki boczne izolowane',
+      'śrubokręt izolowany płaski 3.0–4.0 mm (1000V)',
+      'śrubokręt izolowany krzyżakowy PH1/PH2 (1000V)',
+      'kombinerki izolowane (1000V)',
+      'obcinaczki boczne izolowane (1000V)',
+      'ściągacz izolacji do przewodów',
       'próbnik napięcia',
-      'miernik uniwersalny (multimetr)',
-      'ściągacz izolacji',
-      'tablica szkoleniowa',
-      'zasilanie zabezpieczone (RCD)'
+      'multimetr (miernik uniwersalny)',
+      'kostki/złączki instalacyjne',
+      'tablica szkoleniowa do instalacji',
+      'zasilanie zabezpieczone RCD',
+      'gniazdka, włączniki, puszki instalacyjne (szkoleniowe)',
+      'oprawy oświetleniowe (szkoleniowe)'
     ],
     days: [
       {
-        title: 'Bezpieczeństwo',
+        title: 'Dzień 1 – Bezpieczeństwo i podstawy obwodu',
         skills: [
-          'rozróżnianie przewodów (L / N / PE)',
-          'zasady BHP w elektrotechnice',
-          'praca na niskim napięciu',
-          'rozpoznawanie zagrożeń'
+          'rozróżnianie przewodów L / N / PE (kolory i funkcje)',
+          'zrozumienie pojęć: obwód, obciążenie, zabezpieczenie',
+          'bezpieczne przygotowanie przewodu: cięcie i zdejmowanie izolacji',
+          'prawidłowe zaciskanie i prowadzenie przewodów na tablicy',
+          'zasada pracy: odłącz–sprawdź–zabezpiecz–połącz–testuj'
         ],
         tools: [
+          'ściągacz izolacji',
+          'obcinaczki boczne izolowane',
+          'kombinerki izolowane',
           'próbnik napięcia',
-          'szczypce izolowane',
-          'przewody szkoleniowe',
-          'tablica demonstracyjna'
+          'tablica szkoleniowa'
+        ],
+        techniques: [
+          'przygotowanie przewodów',
+          'prowadzenie przewodów w sposób uporządkowany',
+          'kontrola wizualna połączeń'
+        ],
+        methods: [
+          'instruktaż demonstracyjny',
+          'ćwiczenia na przewodach szkoleniowych',
+          'checklista bezpieczeństwa przed zasileniem'
         ]
       },
       {
-        title: 'Gniazdka i włączniki',
+        title: 'Dzień 2 – Gniazdka i włączniki: poprawne połączenia',
         skills: [
-          'poprawne podłączenie przewodów',
-          'dokręcanie zacisków',
-          'testowanie obwodu',
-          'kontrola bezpieczeństwa'
+          'prawidłowe podłączenie przewodów do zacisków gniazdka',
+          'montaż włącznika jednobiegunowego',
+          'dokręcanie zacisków z wyczuciem',
+          'test ciągłości i test poprawności połączeń',
+          'rozumienie skutków: luźny zacisk = grzanie = ryzyko'
         ],
         tools: [
           'śrubokręty izolowane',
-          'gniazdka szkoleniowe (230V demo)',
+          'gniazdka i włączniki szkoleniowe',
           'puszki instalacyjne',
-          'multimetr'
+          'multimetr',
+          'próbnik napięcia'
+        ],
+        techniques: [
+          'łączenie w zaciskach',
+          'kontrola momentu dokręcenia',
+          'testy przed zasileniem'
+        ],
+        methods: [
+          'praca krok po kroku',
+          'peer-review w parach (wzajemna kontrola)',
+          'testy funkcjonalne na tablicy szkoleniowej'
         ]
       },
       {
-        title: 'Oświetlenie',
+        title: 'Dzień 3 – Oświetlenie: obwody i oprawy',
         skills: [
-          'montaż opraw oświetleniowych',
-          'tworzenie prostych obwodów',
-          'test funkcjonalny',
-          'bezpieczne łączenie'
+          'podłączenie oprawy oświetleniowej do obwodu',
+          'budowa obwodu: zasilanie → włącznik → lampa',
+          'czytelne prowadzenie przewodów i porządek w instalacji',
+          'test działania i interpretacja objawów błędów',
+          'bezpieczne rozłączanie i poprawki'
         ],
         tools: [
-          'oprawy oświetleniowe',
-          'włączniki światła',
-          'listwy montażowe',
-          'narzędzia izolowane'
+          'oprawy oświetleniowe szkoleniowe',
+          'włączniki',
+          'złączki instalacyjne',
+          'śrubokręty izolowane',
+          'multimetr'
+        ],
+        techniques: [
+          'budowa obwodu sterowania oświetleniem',
+          'test funkcjonalny',
+          'eliminacja błędów po objawach'
+        ],
+        methods: [
+          'mini-projekty na stanowiskach',
+          'symulowane błędy (zamiana przewodów, luźny zacisk)',
+          'szybkie iteracje: test–popraw–test'
         ]
       },
       {
-        title: 'Schematy elektryczne (Dzień 4)',
+        title: 'Dzień 4 – Schematy: czytanie i budowanie według rysunku',
         skills: [
-          'czytanie schematów instalacyjnych',
-          'identyfikacja elementów',
-          'tworzenie prostego obwodu według schematu',
-          'wykrywanie błędów'
+          'czytanie prostych schematów instalacyjnych',
+          'identyfikacja elementów na schemacie i na stanowisku',
+          'budowa obwodu zgodnie ze schematem',
+          'systematyczne wykrywanie błędów',
+          'prowadzenie „dziennika testów"'
         ],
         tools: [
           'schematy papierowe',
           'tablica szkoleniowa',
           'multimetr',
-          'próbnik napięcia'
+          'próbnik napięcia',
+          'złączki instalacyjne'
+        ],
+        techniques: [
+          'mapowanie schematu na rzeczywiste połączenia',
+          'diagnostyka krokowa',
+          'test ciągłości i test obecności napięcia'
+        ],
+        methods: [
+          'zadania problemowe (schematy o rosnącej trudności)',
+          'praca w parach: budowa + kontrola',
+          'korekta na podstawie wyników pomiarów'
         ]
       },
       {
-        title: 'Projekt końcowy (Dzień 5)',
+        title: 'Dzień 5 – Projekt końcowy: instalacja na tablicy i odbiór',
         skills: [
-          'montaż kompletnej instalacji',
-          'testowanie wszystkich obwodów',
-          'odpowiedzialność za działanie',
-          'dokumentacja instalacji'
+          'zaprojektowanie i wykonanie kompletnego układu na tablicy szkoleniowej',
+          'prowadzenie przewodów w sposób czytelny i bezpieczny',
+          'testowanie wszystkich obwodów według checklisty',
+          'lokalizacja i poprawa błędów bez zgadywania',
+          'prezentacja: co zrobiono, jak testowano i dlaczego to działa'
         ],
         tools: [
-          'wszystkie narzędzia elektryczne',
-          'tablica szkoleniowa do instalacji',
-          'zasilanie zabezpieczone RCD'
+          'pełny zestaw narzędzi izolowanych',
+          'tablica szkoleniowa',
+          'multimetr',
+          'próbnik napięcia',
+          'RCD (zasilanie zabezpieczone)',
+          'gniazdka, włączniki, oprawy'
+        ],
+        techniques: [
+          'montaż kompleksowy',
+          'kontrola jakości i bezpieczeństwa',
+          'procedura odbioru technicznego'
+        ],
+        methods: [
+          'projekt zespołowy z podziałem ról',
+          'odbiór techniczny przez instruktora',
+          'prezentacja końcowa i omówienie dobrych praktyk'
         ]
       }
     ]

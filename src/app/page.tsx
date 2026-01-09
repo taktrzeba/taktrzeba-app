@@ -12,6 +12,7 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import ParallaxBackground from '@/components/ParallaxBackground';
 import ScrollProgress from '@/components/ScrollProgress';
+import AnchorHandler from '@/components/AnchorHandler';
 import { coursesSyllabus } from '@/data/coursesSyllabus';
 
 export default function Home() {
@@ -78,6 +79,7 @@ export default function Home() {
 
   return (
     <>
+      <AnchorHandler />
       <ScrollProgress />
       <ParallaxBackground />
       <script

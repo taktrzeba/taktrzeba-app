@@ -4,6 +4,72 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { type CourseData } from '@/data/coursesSyllabus';
 
+// Client component for accordion functionality
+function DayAccordion({ days }: { days: any[] }) {
+  const [expandedDay, setExpandedDay] = useState<number | null>(null);
+
+  const toggleDay = (index: number) => {
+    setExpandedDay(expandedDay === index ? null : index);
+  };
+
+  return (
+    <div className="course-program">
+      <h3>Program szczegółowy</h3>
+      <div className="program-accordion">
+        {days.map((day, index) => (
+          <div key={index} className="program-day">
+            <button
+              className={`day-header ${expandedDay === index ? 'expanded' : ''}`}
+              onClick={() => toggleDay(index)}
+            >
+              <span>{day.title}</span>
+              <span className="expand-icon">{expandedDay === index ? '−' : '+'}</span>
+            </button>
+            {expandedDay === index && (
+              <div className="day-content">
+                <div className="day-details">
+                  <div className="day-column">
+                    <h4>Umiejętności</h4>
+                    <ul>
+                      {day.skills.map((skill: string, i: number) => (
+                        <li key={i}>{skill}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="day-column">
+                    <h4>Narzędzia</h4>
+                    <ul>
+                      {day.tools.map((tool: string, i: number) => (
+                        <li key={i}>{tool}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="day-column">
+                    <h4>Techniki</h4>
+                    <ul>
+                      {day.techniques.map((technique: string, i: number) => (
+                        <li key={i}>{technique}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="day-column">
+                    <h4>Metody</h4>
+                    <ul>
+                      {day.methods.map((method: string, i: number) => (
+                        <li key={i}>{method}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 interface CourseSectionProps {
   course: CourseData;
   courseId: string;
@@ -11,11 +77,6 @@ interface CourseSectionProps {
 }
 
 export default function CourseSection({ course, courseId, imageUrl }: CourseSectionProps) {
-  const [expandedDay, setExpandedDay] = useState<number | null>(null);
-
-  const toggleDay = (index: number) => {
-    setExpandedDay(expandedDay === index ? null : index);
-  };
 
   return (
     <section id={courseId} className="single-course-section">
@@ -57,44 +118,7 @@ export default function CourseSection({ course, courseId, imageUrl }: CourseSect
           </div>
 
           {/* Program 5 dni */}
-          <div className="course-days-box animate-on-scroll">
-            <h3>📅 Program 5 dni</h3>
-            <div className="days-accordion">
-              {course.days.map((day, dayIndex) => (
-                <div key={dayIndex} className="single-day-item">
-                  <button
-                    className={`day-header ${expandedDay === dayIndex ? 'active' : ''}`}
-                    onClick={() => toggleDay(dayIndex)}
-                  >
-                    <span className="day-number">Dzień {dayIndex + 1}</span>
-                    <span className="day-title">{day.title}</span>
-                    <span className="day-arrow">{expandedDay === dayIndex ? '−' : '+'}</span>
-                  </button>
-
-                  {expandedDay === dayIndex && (
-                    <div className="day-details">
-                      <div className="day-column">
-                        <h4>📚 Czego się uczą:</h4>
-                        <ul>
-                          {day.skills.map((skill, i) => (
-                            <li key={i}>{skill}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="day-column">
-                        <h4>🔧 Używane narzędzia:</h4>
-                        <ul>
-                          {day.tools.map((tool, i) => (
-                            <li key={i}>{tool}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          <DayAccordion days={course.days} />
         </div>
 
         {/* Efekty kursu */}

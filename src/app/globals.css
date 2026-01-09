@@ -2678,8 +2678,15 @@ p {
   padding: 30px 20px;
   background: var(--bg-light);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
+}
+
+@media (min-width: 1200px) {
+  .day-details {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 }
 
 .day-column h4 {

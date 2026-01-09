@@ -1,0 +1,8 @@
+# robots.txt dla Tydzień Rzemiosła
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://tydzienrzemiosla.pl/sitemap.xml

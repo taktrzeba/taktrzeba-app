@@ -3,10 +3,13 @@ import WhyCourse from '@/components/WhyCourse';
 import CourseFormat from '@/components/CourseFormat';
 import CourseProgram from '@/components/CourseProgram';
 import Benefits from '@/components/Benefits';
+import Gallery from '@/components/Gallery';
 import Safety from '@/components/Safety';
 import ForParents from '@/components/ForParents';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
+import ParallaxBackground from '@/components/ParallaxBackground';
+import ScrollProgress from '@/components/ScrollProgress';
 
 export default function Home() {
   // JSON-LD structured data dla SEO
@@ -52,6 +55,8 @@ export default function Home() {
 
   return (
     <>
+      <ScrollProgress />
+      <ParallaxBackground />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -62,6 +67,7 @@ export default function Home() {
         <CourseFormat />
         <CourseProgram />
         <Benefits />
+        <Gallery />
         <Safety />
         <ForParents />
         <FAQ />

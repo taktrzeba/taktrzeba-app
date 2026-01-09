@@ -1,9 +1,35 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import Image from 'next/image';
+
 export default function CourseProgram() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const cards = sectionRef.current?.querySelectorAll('.course-card');
+    cards?.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
   const courses = [
     {
       icon: '🔧',
       title: 'Mechanik rowerowy',
       subtitle: '„Zrozum, jak działa ruch"',
+      image: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800&h=400&fit=crop',
       why: 'Najniższy próg wejścia. Szybkie efekty. Zero strachu.',
       learns: [
         'jak zbudowany jest rower',
@@ -22,6 +48,7 @@ export default function CourseProgram() {
       icon: '🪚',
       title: 'Stolarka',
       subtitle: '„Z kawałka drewna do prawdziwego przedmiotu"',
+      image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&h=400&fit=crop',
       learns: [
         'pracy z naturalnym materiałem',
         'mierzenia, planowania i precyzji',
@@ -39,6 +66,7 @@ export default function CourseProgram() {
       icon: '🚰',
       title: 'Hydraulika',
       subtitle: '„Każdy dom tego potrzebuje"',
+      image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=400&fit=crop',
       learns: [
         'jak działa instalacja wodna w domu',
         'czym są rury, zawory, syfony',
@@ -56,6 +84,7 @@ export default function CourseProgram() {
       icon: '🔌',
       title: 'Elektryka',
       subtitle: '„Prąd przestaje być magią"',
+      image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&h=400&fit=crop',
       learns: [
         'podstaw bezpieczeństwa',
         'jak działa obwód elektryczny',
@@ -72,13 +101,24 @@ export default function CourseProgram() {
   ];
 
   return (
-    <section id="program" className="course-program-section">
+    <section id="program" className="course-program-section" ref={sectionRef}>
       <div className="container">
-        <h2>Program kursu – szczegóły</h2>
+        <h2 className="animate-on-scroll">Program kursu – szczegóły</h2>
         
         <div className="courses-list">
           {courses.map((course, index) => (
-            <article key={index} className="course-card">
+            <article key={index} className="course-card animate-on-scroll">
+              {course.image && (
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  width={800}
+                  height={400}
+                  className="course-image"
+                  priority={index === 0}
+                />
+              )}
+              
               <div className="course-header">
                 <span className="course-icon">{course.icon}</span>
                 <div>

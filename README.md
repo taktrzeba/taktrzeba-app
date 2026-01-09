@@ -6,14 +6,23 @@ Profesjonalny landing page dla kursu "Tydzień Rzemiosła" - wakacyjnych kursów
 
 - ✅ Pełna optymalizacja SEO (meta tags, structured data, sitemap)
 - ✅ Responsywny design (mobile-first)
-- ✅ 8 sekcji landing page:
-  - Hero z CTA
+- ✅ **20+ animacji CSS i scroll effects**
+- ✅ **Intersection Observer dla płynnych animacji**
+- ✅ **Scroll progress bar**
+- ✅ **Parallax effects**
+- ✅ **10 zdjęć z Unsplash (wymienne na własne)**
+- ✅ **Hover effects na wszystkich elementach**
+- ✅ **Image zoom i gallery overlay**
+- ✅ 9 sekcji landing page:
+  - Hero z animacjami i CTA
   - Dlaczego ten kurs powstał
   - Format kursu
-  - Program szczegółowy (4 zawody)
+  - Program szczegółowy (4 zawody + zdjęcia)
   - Korzyści dla uczestników
+  - Galeria zdjęć z hover effects
   - Bezpieczeństwo i prowadzący
   - Sekcja dla rodziców
+  - FAQ (12 pytań)
   - Formularz zapisu + kontakt
 - ✅ Semantyczny HTML5
 - ✅ JSON-LD structured data dla wyszukiwarek
@@ -47,41 +56,61 @@ webapp/
 │   ├── app/
 │   │   ├── layout.tsx          # Layout z SEO metadata
 │   │   ├── page.tsx            # Główna strona z JSON-LD
-│   │   ├── globals.css         # Globalne style
+│   │   ├── globals.css         # Globalne style + animacje
 │   │   └── sitemap.ts          # Automatyczny sitemap
-│   └── components/
-│       ├── Hero.tsx            # Sekcja hero
-│       ├── WhyCourse.tsx       # Dlaczego kurs
-│       ├── CourseFormat.tsx    # Format zajęć
-│       ├── CourseProgram.tsx   # Program szczegółowy
-│       ├── Benefits.tsx        # Korzyści
-│       ├── Safety.tsx          # Bezpieczeństwo
-│       ├── ForParents.tsx      # Dla rodziców
-│       └── CTA.tsx             # Formularz zapisu
+│   ├── components/
+│   │   ├── Hero.tsx            # Sekcja hero z animacjami
+│   │   ├── WhyCourse.tsx       # Dlaczego kurs
+│   │   ├── CourseFormat.tsx    # Format zajęć
+│   │   ├── CourseProgram.tsx   # Program z obrazami
+│   │   ├── Benefits.tsx        # Korzyści (animowane)
+│   │   ├── Gallery.tsx         # Galeria ze zdjęciami
+│   │   ├── Safety.tsx          # Bezpieczeństwo
+│   │   ├── ForParents.tsx      # Dla rodziców
+│   │   ├── FAQ.tsx             # FAQ (accordion)
+│   │   ├── CTA.tsx             # Formularz zapisu
+│   │   ├── ScrollProgress.tsx  # Progress bar
+│   │   └── ParallaxBackground.tsx  # Parallax effect
+│   └── hooks/
+│       └── useScrollAnimation.ts   # Hook dla animacji
 ├── public/
 │   └── robots.txt             # Konfiguracja robotów
-└── README-SEO.md              # Dokumentacja SEO
-```
-
-## 🎨 Komponenty
-
-### Hero
-Sekcja główna z tytułem, hasłem i przyciskami CTA.
+├── README-SEO.md              # Dokumentacja SEO
+**Animacje:** Fade-in z delays, float animation dla ikony, parallax background
 
 ### WhyCourse
 Wyjaśnia problem i rozwiązanie. Pokazuje grupę docelową.
+**Animacje:** Slide-in dla boxes, intersection observer
 
 ### CourseFormat
 Szczegóły organizacyjne: czas, grupy, forma zajęć.
 
 ### CourseProgram
-4 szczegółowe karty zawodów:
+4 szczegółowe karty zawodów + zdjęcia:
 - 🔧 Mechanik rowerowy
 - 🪚 Stolarz
 - 🚰 Hydraulik
 - 🔌 Elektryk
 
+**Animacje:** Scroll reveal, hover zoom na obrazach, shimmer effect
+
 ### Benefits
+Lista korzyści dla uczestników.
+**Animacje:** Staggered reveal, hover slide effect
+
+### Gallery
+6 zdjęć z kursów w grid layout.
+**Animacje:** Image zoom, overlay reveal, lift effect
+
+### Safety
+Bezpieczeństwo, organizacja, informacje o prowadzących.
+
+### ForParents
+Argumenty dla rodziców, wyjaśnienie wartości kursu.
+
+### FAQ
+12 często zadawanych pytań w formacie accordion.
+**Animacje:** Smooth expand/collapse, icon rotation
 Lista korzyści dla uczestników.
 
 ### Safety
@@ -130,9 +159,25 @@ Strona jest w pełni responsywna z breakpointami:
 ```css
 --primary-color: #2c5f2d (zielony)
 --primary-dark: #1e4620
---secondary-color: #d97706 (pomarańczowy)
---success-color: #059669
-```
+--secondary-color: #d97706 (pomarańczow + Animations
+- **Images**: Next.js Image component + Unsplash
+- **Animations**: CSS @keyframes + Intersection Observer API
+- **SEO**: Built-in Next.js metadata API
+- **Deployment**: Vercel ready
+
+## 🎨 Animacje i Efekty
+
+Landing page zawiera **20+ różnych animacji**:
+- ✨ Fade-in effects
+- 🎬 Scroll-triggered animations
+- 🖱️ Hover effects (zoom, lift, slide)
+- 📊 Scroll progress bar
+- 🌊 Parallax backgrounds
+- 🔄 Smooth transitions
+- 📸 Image reveal effects
+- 🎯 Staggered animations
+
+Pełna dokumentacja: [ANIMATIONS.md](./ANIMATIONS.md)
 
 ### Typografia:
 - Font główny: Geist Sans

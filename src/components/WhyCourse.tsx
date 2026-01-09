@@ -1,8 +1,33 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import Image from 'next/image';
+
 export default function WhyCourse() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="o-kursie" className="why-course-section">
+    <section id="o-kursie" className="why-course-section" ref={sectionRef}>
       <div className="container">
-        <h2>Dlaczego ten kurs powstał?</h2>
+        <h2 className="animate-on-scroll">Dlaczego ten kurs powstał?</h2>
         
         <div className="problem-solution">
           <div className="problem-box">

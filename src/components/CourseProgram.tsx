@@ -29,7 +29,7 @@ export default function CourseProgram() {
       icon: '🔧',
       title: 'Mechanik rowerowy',
       subtitle: '„Zrozum, jak działa ruch"',
-      image: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop&q=80',
       why: 'Najniższy próg wejścia. Szybkie efekty. Zero strachu.',
       learns: [
         'jak zbudowany jest rower',
@@ -48,7 +48,7 @@ export default function CourseProgram() {
       icon: '🪚',
       title: 'Stolarka',
       subtitle: '„Z kawałka drewna do prawdziwego przedmiotu"',
-      image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=400&fit=crop&q=80',
       learns: [
         'pracy z naturalnym materiałem',
         'mierzenia, planowania i precyzji',
@@ -66,7 +66,7 @@ export default function CourseProgram() {
       icon: '🚰',
       title: 'Hydraulika',
       subtitle: '„Każdy dom tego potrzebuje"',
-      image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1607400201515-c2c41c07d307?w=800&h=400&fit=crop&q=80',
       learns: [
         'jak działa instalacja wodna w domu',
         'czym są rury, zawory, syfony',
@@ -84,7 +84,7 @@ export default function CourseProgram() {
       icon: '🔌',
       title: 'Elektryka',
       subtitle: '„Prąd przestaje być magią"',
-      image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=400&fit=crop&q=80',
       learns: [
         'podstaw bezpieczeństwa',
         'jak działa obwód elektryczny',

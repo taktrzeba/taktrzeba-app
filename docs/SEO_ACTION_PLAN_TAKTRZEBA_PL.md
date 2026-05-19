@@ -3,6 +3,136 @@
 Date: 2026-05-19
 Owner: Marketing + Product + Engineering
 Status: Draft (ready for execution)
+Last Updated: 2026-05-19
+
+## Progress Tracker (2026-05-19)
+
+Legend: `DONE` | `IN_PROGRESS` | `PENDING` | `BLOCKED`
+
+### Phase P0 — Technical + Trust Foundation
+
+- [x] `DONE` Technical SEO audit (initial pass completed)
+  - [x] `DONE` Indexing/crawlability check (`sitemap`, `robots`).
+  - [x] `DONE` Canonical/metadata baseline check.
+  - [ ] `PENDING` Core Web Vitals measurement baseline from production reports.
+  - [ ] `PENDING` Mobile performance audit with PageSpeed report snapshot.
+- [x] `DONE` Metadata standardization on key pages
+  - [x] `DONE` Home metadata present.
+  - [x] `DONE` Trust/legal pages have unique title/description/canonical.
+  - [ ] `PENDING` OG/Twitter image and text optimization per each new trust/legal page.
+- [ ] `IN_PROGRESS` Performance improvements
+  - [ ] `PENDING` `next/image` migration for key media areas.
+  - [ ] `PENDING` Font loading optimization pass.
+  - [ ] `PENDING` Bundle size/client JS reduction pass.
+  - [ ] `PENDING` CDN/cache header verification.
+- [x] `DONE` Trust/legal pages published
+  - [x] `DONE` `/o-nas`
+  - [x] `DONE` `/kontakt`
+  - [x] `DONE` `/dla-rodzicow`
+  - [x] `DONE` `/bezpieczenstwo`
+  - [x] `DONE` `/regulamin`
+  - [x] `DONE` `/polityka-prywatnosci`
+- [ ] `IN_PROGRESS` Baseline schema coverage
+  - [x] `DONE` `Organization`
+  - [x] `DONE` `LocalBusiness`
+  - [x] `DONE` `Course` (home page JSON-LD)
+  - [ ] `PENDING` `Event`
+  - [ ] `PENDING` `FAQPage`
+
+### Phase P1 — Content Clusters + Local SEO
+
+- [ ] `PENDING` Launch `/poradnik/` content hub.
+- [ ] `PENDING` Publish 20-30 parent-intent educational articles.
+- [ ] `PENDING` Build skill clusters.
+  - [ ] `PENDING` Stolarka cluster pages.
+  - [ ] `PENDING` Hydraulika cluster pages.
+  - [ ] `PENDING` Elektryka cluster pages.
+  - [ ] `PENDING` Mechanika rowerowa cluster pages.
+- [ ] `PENDING` Launch city pages.
+  - [ ] `PENDING` `/warszawa`
+  - [ ] `PENDING` `/poznan`
+  - [ ] `PENDING` `/krakow`
+- [ ] `PENDING` Google Business Profile setup and optimization.
+
+### Phase P2 — Conversion + Distribution
+
+- [ ] `PENDING` Create segmented conversion landing pages.
+  - [ ] `PENDING` Parents.
+  - [ ] `PENDING` Girls.
+  - [ ] `PENDING` Boys.
+  - [ ] `PENDING` Schools.
+  - [ ] `PENDING` Sponsors.
+- [ ] `PENDING` Add social proof modules.
+- [ ] `PENDING` Add lead magnets and capture flow.
+  - [ ] `PENDING` "7 sposobów na ograniczenie telefonu u nastolatka".
+  - [ ] `PENDING` "Checklist wakacji bez ekranów".
+- [ ] `PENDING` Start short-form cadence (TikTok/Shorts/Reels).
+- [ ] `PENDING` Start YouTube SEO cadence.
+- [ ] `PENDING` Start backlink outreach.
+
+### Phase P3 — Programmatic + AI-Assisted Scale
+
+- [ ] `PENDING` Introduce reusable SEO page templates.
+- [ ] `PENDING` Create instructor entity pages (`/prowadzacy/[slug]`).
+- [ ] `PENDING` Add AI-assisted SEO workflow.
+  - [ ] `PENDING` Keyword clustering.
+  - [ ] `PENDING` Content gap analysis.
+  - [ ] `PENDING` FAQ ideation.
+  - [ ] `PENDING` Internal linking suggestions.
+
+### Quality Gates Progress
+
+- [ ] `IN_PROGRESS` Linting gate
+  - [ ] `BLOCKED` Full `yarn lint` pass (currently failing on pre-existing unrelated component lint errors).
+  - [x] `DONE` Lint pass on changed SEO/trust files.
+- [x] `DONE` Type checking gate
+  - [x] `DONE` `yarn tsc --noEmit`.
+- [ ] `PENDING` Integration tests gate
+  - [ ] `PENDING` Execute serial integration run for SEO scenarios.
+  - [ ] `PENDING` Validate metadata/schema/rendering assertions.
+- [ ] `PENDING` E2E tests gate
+  - [ ] `PENDING` Execute serial E2E run for trust/local/conversion flows.
+  - [ ] `PENDING` Validate mobile and SEO-entry journeys.
+
+### Integration Test Plan Progress
+
+- [ ] `PENDING` Metadata scenario implemented + passing.
+- [ ] `PENDING` Schema scenario implemented + passing.
+- [ ] `PENDING` Local SEO scenario implemented + passing.
+- [ ] `PENDING` Conversion scenario implemented + passing.
+
+### E2E Test Plan Progress
+
+- [ ] `PENDING` Parent journey implemented + passing.
+- [ ] `PENDING` Local journey implemented + passing.
+- [ ] `PENDING` Trust journey implemented + passing.
+- [ ] `PENDING` Mobile performance/UX journey implemented + passing.
+
+## Execution Update (2026-05-19)
+
+Completed in this iteration:
+- Technical SEO foundation:
+  - Fixed `robots` sitemap domain to `https://taktrzeba.pl/sitemap.xml`.
+  - Added `src/app/robots.ts` metadata route for consistent robots configuration.
+  - Replaced fragment-only sitemap entries with crawlable URLs.
+- Trust/legal foundation pages added:
+  - `/o-nas`
+  - `/kontakt`
+  - `/dla-rodzicow`
+  - `/bezpieczenstwo`
+  - `/regulamin`
+  - `/polityka-prywatnosci`
+- Metadata and discoverability:
+  - Added unique per-page metadata + canonical URL on each trust/legal page.
+  - Added internal links to trust/legal pages in footer navigation.
+- Structured data:
+  - Added site-wide `Organization` + `LocalBusiness` JSON-LD in root layout.
+
+Still pending from broader plan:
+- Content cluster rollout (`/poradnik/`, 20-30 articles, skill clusters).
+- Local SEO city pages (`/warszawa`, `/poznan`, `/krakow`, etc.).
+- Conversion LP segmentation and lead magnet workflows.
+- Distribution cadence (TikTok/Shorts/YouTube) and backlink outreach.
 
 ## Documentation Notes
 

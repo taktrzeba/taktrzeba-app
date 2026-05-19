@@ -73,23 +73,30 @@ export default function Hero() {
 
           {/* Tagline with glassmorphism */}
           <div className="hero-tagline-box fade-in delay-2">
-            <p className="hero-tagline">„Brudne ręce. Czysta głowa."</p>
-            <p className="hero-tagline-sub">Praktyczne umiejętności, które zostają na całe życie</p>
+            <p className="hero-tagline">Tydzień bez ekranów. Umiejętności na całe życie.</p>
+            <p className="hero-tagline-sub">
+              Stolarka, hydraulika, elektryka i mechanika rowerowa prowadzona przez praktyków.
+              Małe grupy, prawdziwe narzędzia i realne umiejętności.
+            </p>
           </div>
 
           {/* Stats cards */}
           <div className="hero-stats fade-in delay-3">
             <div className="stat-card scale-in delay-3">
-              <div className="stat-number">5</div>
-              <div className="stat-label">Dni intensywnej nauki</div>
+              <div className="stat-number">12</div>
+              <div className="stat-label">Uczestników max</div>
             </div>
             <div className="stat-card scale-in delay-4">
               <div className="stat-number">4</div>
-              <div className="stat-label">Kierunki rzemiosła</div>
+              <div className="stat-label">Warsztaty praktyczne</div>
             </div>
             <div className="stat-card scale-in delay-5">
-              <div className="stat-number">100%</div>
-              <div className="stat-label">Praktyka, zero teorii</div>
+              <div className="stat-number">35</div>
+              <div className="stat-label">Godzin zajęć</div>
+            </div>
+            <div className="stat-card scale-in delay-6">
+              <div className="stat-number">0</div>
+              <div className="stat-label">Telefonów podczas zajęć</div>
             </div>
           </div>
 
@@ -116,11 +123,11 @@ export default function Hero() {
           {/* CTA buttons with enhanced styling */}
           <div className="hero-cta fade-in delay-5">
             <a href="#zapisy" className="btn btn-primary btn-hero shimmer-effect">
-              <span className="btn-text">Zarezerwuj miejsce na lato 2026</span>
+              <span className="btn-text">Zapisz dziecko</span>
               <span className="btn-icon">→</span>
             </a>
             <a href="#program" className="btn btn-secondary btn-hero">
-              <span className="btn-text">Zobacz pełny program</span>
+              <span className="btn-text">Zobacz program</span>
             </a>
           </div>
 
@@ -145,15 +152,19 @@ export default function Hero() {
           <div className="hero-trust fade-in delay-7">
             <div className="trust-item">
               <span className="trust-icon">✓</span>
-              <span>Bezpieczne warsztaty</span>
+              <span>Małe grupy</span>
             </div>
             <div className="trust-item">
               <span className="trust-icon">✓</span>
-              <span>Certyfikowane materiały</span>
+              <span>Ubezpieczenie uczestników</span>
             </div>
             <div className="trust-item">
               <span className="trust-icon">✓</span>
-              <span>Doświadczeni instruktorzy</span>
+              <span>Doświadczeni prowadzący</span>
+            </div>
+            <div className="trust-item">
+              <span className="trust-icon">✓</span>
+              <span>Opieka przez cały dzień</span>
             </div>
           </div>
 

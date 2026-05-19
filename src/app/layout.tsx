@@ -12,6 +12,42 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://taktrzeba.pl/#organization',
+      name: 'TakTrzeba',
+      url: 'https://taktrzeba.pl',
+      logo: 'https://taktrzeba.pl/favicon.svg',
+      description:
+        'Praktyczne warsztaty dla młodzieży 14-16 lat: stolarka, hydraulika, elektryka i mechanika rowerowa.',
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          contactType: 'customer support',
+          email: 'kontakt@taktrzeba.pl',
+          availableLanguage: ['pl'],
+        },
+      ],
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id': 'https://taktrzeba.pl/#localbusiness',
+      name: 'TakTrzeba',
+      url: 'https://taktrzeba.pl',
+      email: 'kontakt@taktrzeba.pl',
+      areaServed: 'PL',
+      parentOrganization: {
+        '@id': 'https://taktrzeba.pl/#organization',
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "tak trzeba - Wakacyjny kurs praktyczny dla młodzieży 14-16 lat | taktrzeba.pl | Stolarka, Elektryka, Hydraulika",
   description: "Praktyczne kursy zawodowe dla młodzieży 14-16 lat w Polsce. Stolarka, elektryka, hydraulika, mechanika rowerowa. 5 dni intensywnej nauki przez praktykę. Wakacje z sensem bez telefonów.",
@@ -75,7 +111,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'verification_token', // Dodaj po weryfikacji w Google Search Console
+    google: googleVerification,
   },
   viewport: {
     width: 'device-width',
@@ -106,6 +142,10 @@ export default function RootLayout({
         <link rel="alternate icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
         <meta name="theme-color" content="#2c5f2d" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

@@ -10,6 +10,7 @@ import Safety from '@/components/Safety';
 import ForParents from '@/components/ForParents';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
+import Testimonials from '@/components/Testimonials';
 import ParallaxBackground from '@/components/ParallaxBackground';
 import ScrollProgress from '@/components/ScrollProgress';
 import AnchorHandler from '@/components/AnchorHandler';
@@ -88,9 +89,19 @@ export default function Home() {
       />
       <main>
         <Hero />
+        <Gallery />
         <WhyCourse />
         <CourseFormat />
         <CourseProgram />
+
+        <section className="course-format-section">
+          <div className="container">
+            <div className="format-highlight">
+              <p><strong>Sprawdź terminy i dostępność miejsc</strong></p>
+              <a href="#zapisy" className="btn btn-primary btn-large">Sprawdź terminy</a>
+            </div>
+          </div>
+        </section>
         
         {/* Sekcje szczegółowe dla każdego kursu */}
         {coursesSyllabus.map((course, index) => (
@@ -102,11 +113,24 @@ export default function Home() {
           />
         ))}
         
+        <ForParents />
         <CourseDetails />
         <Benefits />
-        <Gallery />
         <Safety />
-        <ForParents />
+        <Testimonials />
+
+        <section className="course-format-section">
+          <div className="container">
+            <div className="format-highlight">
+              <p><strong>Masz pytania? Porozmawiaj z nami lub zapisz dziecko na listę.</strong></p>
+              <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <a href="#zapisy" className="btn btn-primary btn-large">Zapisz na listę</a>
+                <a href="/kontakt" className="btn btn-secondary btn-large">Porozmawiaj z nami</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <FAQ />
         <CTA />
       </main>
@@ -132,6 +156,11 @@ export default function Home() {
                 <li><a href="#program">Program</a></li>
                 <li><a href="#program-szczegolowy">Program szczegółowy</a></li>
                 <li><a href="#zapisy">Zapisy</a></li>
+                <li><a href="/o-nas">O nas</a></li>
+                <li><a href="/dla-rodzicow">Dla rodziców</a></li>
+                <li><a href="/bezpieczenstwo">Bezpieczeństwo</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+                <li><a href="/regulamin">Regulamin</a></li>
               </ul>
             </div>
             <div className="footer-section">

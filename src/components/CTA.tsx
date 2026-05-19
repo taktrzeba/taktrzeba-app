@@ -2,14 +2,14 @@ export default function CTA() {
   return (
     <section id="zapisy" className="cta-section">
       <div className="container">
-        <h2>Zapisz dziecko na Tydzień Rzemiosła</h2>
+        <h2>Zapisz dziecko na listę zainteresowanych</h2>
         
         <div className="cta-content">
           <div className="cta-box">
             <h3>Nadchodzące terminy</h3>
             <div className="cta-info">
               <p>Letnie wakacje 2026</p>
-              <p>Miejsca ograniczone – grupy max 10 osób</p>
+              <p>Miejsca ograniczone – grupy max 12 osób</p>
             </div>
             
             <form className="cta-form">
@@ -36,28 +36,6 @@ export default function CTA() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="phone">Telefon</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone" 
-                  required 
-                  placeholder="+48 123 456 789"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="child-name">Imię dziecka</label>
-                <input 
-                  type="text" 
-                  id="child-name" 
-                  name="child-name" 
-                  required 
-                  placeholder="Imię"
-                />
-              </div>
-
-              <div className="form-group">
                 <label htmlFor="child-age">Wiek dziecka</label>
                 <select id="child-age" name="child-age" required>
                   <option value="">Wybierz wiek</option>
@@ -68,29 +46,48 @@ export default function CTA() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Dodatkowe informacje (opcjonalnie)</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  rows={4}
-                  placeholder="Pytania, uwagi..."
+                <label htmlFor="city">Miasto</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  required 
+                  placeholder="np. Warszawa"
                 />
               </div>
 
+              <div className="form-group">
+                <label htmlFor="preferred-workshop">Preferowany warsztat</label>
+                <select id="preferred-workshop" name="preferred-workshop" required>
+                  <option value="">Wybierz warsztat</option>
+                  <option value="stolarka">Stolarka</option>
+                  <option value="hydraulika">Hydraulika</option>
+                  <option value="elektryka">Elektryka</option>
+                  <option value="mechanika-rowerowa">Mechanika rowerowa</option>
+                </select>
+              </div>
+
               <button type="submit" className="btn btn-primary btn-large">
-                Wyślij zgłoszenie
+                Zapisz na listę
               </button>
 
               <p className="form-note">
-                Skontaktujemy się z Tobą w ciągu 24h
+                Oddzwonimy lub odpiszemy z dostępnymi terminami i szczegółami.
               </p>
+
+              <a href="#program" className="btn btn-secondary btn-large" style={{ marginTop: '0.75rem' }}>
+                Zobacz program
+              </a>
             </form>
           </div>
 
           <div className="contact-info">
-            <h3>Kontakt</h3>
-            <p>Email: <a href="mailto:kontakt@tydzienmiosla.pl">kontakt@tydzienmiosla.pl</a></p>
+            <h3>Porozmawiaj z nami</h3>
+            <p>Email: <a href="mailto:kontakt@taktrzeba.pl">kontakt@taktrzeba.pl</a></p>
             <p>Telefon: <a href="tel:+48123456789">+48 123 456 789</a></p>
+            <p style={{ marginTop: '1rem' }}>
+              Możesz też wysłać zapytanie i wrócimy z propozycją terminu dopasowaną do wieku dziecka i miasta.
+            </p>
             
             <div className="social-links">
               <h4>Śledź nas:</h4>

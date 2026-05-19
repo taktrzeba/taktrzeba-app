@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 
 export default function WhyCourse() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -27,27 +26,27 @@ export default function WhyCourse() {
   return (
     <section id="o-kursie" className="why-course-section" ref={sectionRef}>
       <div className="container">
-        <h2 className="animate-on-scroll">Dlaczego ten kurs powstał?</h2>
+        <h2 className="animate-on-scroll">Dlaczego ten program jest dziś tak potrzebny?</h2>
         
         <div className="problem-solution">
           <div className="problem-box">
-            <h3>Dzisiejsze dzieci:</h3>
+            <h3>Dzisiejsze dzieci świetnie obsługują aplikacje, ale rzadziej ćwiczą praktyczne kompetencje:</h3>
             <ul>
-              <li>spędzają większość czasu przed ekranem</li>
-              <li>mają problem z koncentracją</li>
-              <li>nie widzą związku między pracą a efektem</li>
+              <li>cierpliwość i koncentrację w dłuższej pracy</li>
+              <li>samodzielność w rozwiązywaniu codziennych problemów</li>
+              <li>odpowiedzialność za proces i efekt końcowy</li>
             </ul>
           </div>
           
           <div className="solution-box">
-            <h3>Tydzień Rzemiosła to bezpieczny, przemyślany reset:</h3>
+            <h3>TakTrzeba to bezpieczny, praktyczny tydzień budowania pewności siebie:</h3>
             <ul>
-              <li>od social mediów</li>
-              <li>od ciągłej stymulacji</li>
-              <li>od „wirtualnego świata bez konsekwencji"</li>
+              <li>praca w zespole i współpraca</li>
+              <li>realne zadania i realne efekty</li>
+              <li>nauka odpowiedzialności przez działanie</li>
             </ul>
             <p className="highlight">
-              Tu liczą się ręce, uważność i odpowiedzialność.
+              Tu liczą się uważność, sprawczość i kompetencje, które zostają na lata.
             </p>
           </div>
         </div>
@@ -62,7 +61,7 @@ export default function WhyCourse() {
               ✔ dzieci znudzone szkołą
             </div>
             <div className="audience-item">
-              ✔ młodzi „uzależnieni od telefonu"
+              ✔ młodzież, która potrzebuje więcej działania niż ekranu
             </div>
             <div className="audience-item">
               ✔ uczniowie bez pomysłu na przyszłość
@@ -77,7 +76,7 @@ export default function WhyCourse() {
             <ul>
               <li>żadnej wiedzy technicznej</li>
               <li>żadnego doświadczenia</li>
-              <li>żadnych zdolności „manualnych"</li>
+              <li>żadnych wyjątkowych zdolności manualnych</li>
             </ul>
           </div>
         </div>

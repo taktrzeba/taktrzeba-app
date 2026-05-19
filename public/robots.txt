@@ -1,8 +1,8 @@
-# robots.txt dla Tydzień Rzemiosła
+# robots.txt dla taktrzeba.pl
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
 
 # Sitemap
-Sitemap: https://tydzienrzemiosla.pl/sitemap.xml
+Sitemap: https://taktrzeba.pl/sitemap.xml

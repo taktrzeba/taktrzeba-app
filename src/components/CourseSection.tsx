@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { type CourseData } from '@/data/coursesSyllabus';
+import { type CourseData, type DayContent } from '@/data/coursesSyllabus';
 
 // Client component for accordion functionality
-function DayAccordion({ days }: { days: any[] }) {
+function DayAccordion({ days }: { days: DayContent[] }) {
   const [expandedDay, setExpandedDay] = useState<number | null>(null);
 
   const toggleDay = (index: number) => {
@@ -22,14 +22,15 @@ function DayAccordion({ days }: { days: any[] }) {
         {days.map((day, index) => (
           <div key={index} className="program-day">
             <button
-              className={`day-header ${expandedDay === index ? 'expanded' : ''}`}
+              type="button"
+              className={`day-header ${expandedDay === index ? 'active' : ''}`}
               onClick={() => toggleDay(index)}
             >
               <div className="day-title-section">
                 <span className="day-number">Dzień {index + 1}</span>
                 <span className="day-title">{day.title}</span>
               </div>
-              <span className="expand-icon">{expandedDay === index ? '−' : '+'}</span>
+              <span className="day-arrow">{expandedDay === index ? '▼' : '▶'}</span>
             </button>
             {expandedDay === index && (
               <div className="day-content">
@@ -140,7 +141,8 @@ export default function CourseSection({ course, courseId, imageUrl }: CourseSect
 
         {/* Przycisk toggle szczegółów */}
         <div className="course-details-toggle">
-          <button 
+          <button
+            type="button"
             className={`btn btn-outline btn-large details-toggle ${isExpanded ? 'expanded' : ''}`}
             onClick={toggleExpanded}
           >
@@ -155,7 +157,7 @@ export default function CourseSection({ course, courseId, imageUrl }: CourseSect
 
         {/* Szczegółowy program - accordion */}
         {isExpanded && (
-          <div className="course-detailed-content animate-on-scroll">
+          <div className="course-detailed-content">
             <div className="course-content-grid">
               {/* Wszystkie narzędzia */}
               <div className="course-tools-box">

@@ -2405,7 +2405,7 @@ p {
   color: white;
 }
 
-.day-number {
+.day-accordion-header .day-number {
   font-weight: 700;
   font-size: 0.875rem;
   padding: 0.25rem 0.75rem;
@@ -2420,13 +2420,13 @@ p {
   color: var(--primary-color);
 }
 
-.day-title {
+.day-accordion-header .day-title {
   flex: 1;
   font-weight: 600;
   font-size: 1rem;
 }
 
-.day-arrow {
+.day-accordion-header .day-arrow {
   margin-left: auto;
   font-size: 0.75rem;
   transition: transform 0.2s ease;
@@ -3035,7 +3035,7 @@ p {
     flex-wrap: wrap;
   }
 
-  .day-number {
+  .day-accordion-header .day-number {
     font-size: 0.75rem;
   }
 
@@ -3394,9 +3394,9 @@ p {
   text-align: left;
 }
 
-.day-number {
+.day-title-section .day-number {
   font-size: 0.9rem;
-  color: var(--accent-color);
+  color: var(--primary-color);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -3563,7 +3563,7 @@ p {
   color: white;
 }
 
-.day-number {
+.day-header .day-number {
   font-weight: 700;
   font-size: 0.9rem;
   text-transform: uppercase;

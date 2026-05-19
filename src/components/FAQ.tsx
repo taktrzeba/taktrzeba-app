@@ -13,6 +13,10 @@ export default function FAQ() {
       answer: "Tak, bezpieczeństwo jest naszym priorytetem. Wszystkie zajęcia prowadzone są pod stałym nadzorem doświadczonych instruktorów. Używamy bezpiecznych, szkoleniowych stanowisk oraz narzędzi dostosowanych do wieku. Wszyscy uczestnicy są objęci ubezpieczeniem."
     },
     {
+      question: "Jak wygląda opieka i nadzór podczas dnia?",
+      answer: "Każda grupa pracuje pod stałym nadzorem prowadzących. Dzień ma jasną strukturę pracy i przerw, a w sytuacjach pilnych rodzice mają szybki kontakt z zespołem organizacyjnym."
+    },
+    {
       question: "Czy dziecko otrzyma certyfikat?",
       answer: "Nie wydajemy certyfikatów zawodowych ani uprawnień. Celem kursu nie jest formalna kwalifikacja, ale praktyczne doświadczenie i rozwój kompetencji życiowych. Dajemy coś ważniejszego - realne umiejętności i pewność siebie."
     },
@@ -23,6 +27,10 @@ export default function FAQ() {
     {
       question: "Co z telefonami?",
       answer: "Telefony są deponowane na czas zajęć. To część doświadczenia - uczymy koncentracji i pracy bez ciągłych rozpraszaczy. Rodzice mają stały kontakt z nami w razie potrzeby."
+    },
+    {
+      question: "Czy dziewczyny też mogą uczestniczyć?",
+      answer: "Tak. Program jest otwarty dla wszystkich uczestników w wieku 14-16 lat. Liczy się chęć nauki przez praktykę, nie wcześniejsze doświadczenie techniczne."
     },
     {
       question: "Jakie zawody są w programie?",

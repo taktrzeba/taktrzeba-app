@@ -11,6 +11,7 @@ import ForParents from '@/components/ForParents';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import Testimonials from '@/components/Testimonials';
+import LandingVideo from '@/components/LandingVideo';
 import ParallaxBackground from '@/components/ParallaxBackground';
 import ScrollProgress from '@/components/ScrollProgress';
 import AnchorHandler from '@/components/AnchorHandler';
@@ -118,6 +119,7 @@ export default function Home() {
         <Benefits />
         <Safety />
         <Testimonials />
+        <LandingVideo />
 
         <section className="course-format-section">
           <div className="container">

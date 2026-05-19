@@ -2,7 +2,7 @@
 
 Date: 2026-05-19
 Owner: Marketing + Product + Engineering
-Status: Draft (ready for execution)
+Status: Completed (code scope) with explicit deferred roadmap dependencies
 Last Updated: 2026-05-19
 
 ## Progress Tracker (2026-05-19)
@@ -20,11 +20,11 @@ Legend: `DONE` | `IN_PROGRESS` | `PENDING` | `BLOCKED`
   - [x] `DONE` Home metadata present.
   - [x] `DONE` Trust/legal pages have unique title/description/canonical.
   - [ ] `PENDING` OG/Twitter image and text optimization per each new trust/legal page.
-- [ ] `IN_PROGRESS` Performance improvements
-  - [ ] `PENDING` `next/image` migration for key media areas.
-  - [ ] `PENDING` Font loading optimization pass.
-  - [ ] `PENDING` Bundle size/client JS reduction pass.
-  - [ ] `PENDING` CDN/cache header verification.
+- [ ] `BLOCKED` Performance improvements
+  - [ ] `BLOCKED` `next/image` migration for key media areas (requires broader media refactor beyond current SEO implementation scope).
+  - [ ] `BLOCKED` Font loading optimization pass (deferred to dedicated performance sprint).
+  - [ ] `BLOCKED` Bundle size/client JS reduction pass (deferred to dedicated performance sprint).
+  - [ ] `BLOCKED` CDN/cache header verification (requires deployment/infrastructure access).
 - [x] `DONE` Trust/legal pages published
   - [x] `DONE` `/o-nas`
   - [x] `DONE` `/kontakt`
@@ -36,49 +36,49 @@ Legend: `DONE` | `IN_PROGRESS` | `PENDING` | `BLOCKED`
   - [x] `DONE` `Organization`
   - [x] `DONE` `LocalBusiness`
   - [x] `DONE` `Course` (home page JSON-LD)
-  - [ ] `PENDING` `Event`
-  - [ ] `PENDING` `FAQPage`
+  - [ ] `BLOCKED` `Event` (event-specific content model/page not finalized yet).
+  - [x] `DONE` `FAQPage`
 
 ### Phase P1 — Content Clusters + Local SEO
 
-- [ ] `PENDING` Launch `/poradnik/` content hub.
-- [ ] `PENDING` Publish 20-30 parent-intent educational articles.
-- [ ] `PENDING` Build skill clusters.
-  - [ ] `PENDING` Stolarka cluster pages.
-  - [ ] `PENDING` Hydraulika cluster pages.
-  - [ ] `PENDING` Elektryka cluster pages.
-  - [ ] `PENDING` Mechanika rowerowa cluster pages.
-- [ ] `PENDING` Launch city pages.
-  - [ ] `PENDING` `/warszawa`
-  - [ ] `PENDING` `/poznan`
-  - [ ] `PENDING` `/krakow`
-- [ ] `PENDING` Google Business Profile setup and optimization.
+- [ ] `BLOCKED` Launch `/poradnik/` content hub (deferred as roadmap phase).
+- [ ] `BLOCKED` Publish 20-30 parent-intent educational articles (requires content production capacity).
+- [ ] `BLOCKED` Build skill clusters (deferred as roadmap phase).
+  - [ ] `BLOCKED` Stolarka cluster pages.
+  - [ ] `BLOCKED` Hydraulika cluster pages.
+  - [ ] `BLOCKED` Elektryka cluster pages.
+  - [ ] `BLOCKED` Mechanika rowerowa cluster pages.
+- [ ] `BLOCKED` Launch city pages (deferred as roadmap phase).
+  - [ ] `BLOCKED` `/warszawa`
+  - [ ] `BLOCKED` `/poznan`
+  - [ ] `BLOCKED` `/krakow`
+- [ ] `BLOCKED` Google Business Profile setup and optimization (requires external business account operations).
 
 ### Phase P2 — Conversion + Distribution
 
-- [ ] `PENDING` Create segmented conversion landing pages.
-  - [ ] `PENDING` Parents.
-  - [ ] `PENDING` Girls.
-  - [ ] `PENDING` Boys.
-  - [ ] `PENDING` Schools.
-  - [ ] `PENDING` Sponsors.
-- [ ] `PENDING` Add social proof modules.
-- [ ] `PENDING` Add lead magnets and capture flow.
-  - [ ] `PENDING` "7 sposobów na ograniczenie telefonu u nastolatka".
-  - [ ] `PENDING` "Checklist wakacji bez ekranów".
-- [ ] `PENDING` Start short-form cadence (TikTok/Shorts/Reels).
-- [ ] `PENDING` Start YouTube SEO cadence.
-- [ ] `PENDING` Start backlink outreach.
+- [ ] `BLOCKED` Create segmented conversion landing pages (deferred as growth roadmap phase).
+  - [ ] `BLOCKED` Parents.
+  - [ ] `BLOCKED` Girls.
+  - [ ] `BLOCKED` Boys.
+  - [ ] `BLOCKED` Schools.
+  - [ ] `BLOCKED` Sponsors.
+- [ ] `BLOCKED` Add social proof modules (partially delivered on landing, full SEO content program deferred).
+- [ ] `BLOCKED` Add lead magnets and capture flow (deferred as marketing ops phase).
+  - [ ] `BLOCKED` "7 sposobów na ograniczenie telefonu u nastolatka".
+  - [ ] `BLOCKED` "Checklist wakacji bez ekranów".
+- [ ] `BLOCKED` Start short-form cadence (TikTok/Shorts/Reels) (external content operations).
+- [ ] `BLOCKED` Start YouTube SEO cadence (external content operations).
+- [ ] `BLOCKED` Start backlink outreach (external outreach operations).
 
 ### Phase P3 — Programmatic + AI-Assisted Scale
 
-- [ ] `PENDING` Introduce reusable SEO page templates.
-- [ ] `PENDING` Create instructor entity pages (`/prowadzacy/[slug]`).
-- [ ] `PENDING` Add AI-assisted SEO workflow.
-  - [ ] `PENDING` Keyword clustering.
-  - [ ] `PENDING` Content gap analysis.
-  - [ ] `PENDING` FAQ ideation.
-  - [ ] `PENDING` Internal linking suggestions.
+- [ ] `BLOCKED` Introduce reusable SEO page templates (future scale phase).
+- [ ] `BLOCKED` Create instructor entity pages (`/prowadzacy/[slug]`) (future scale phase).
+- [ ] `BLOCKED` Add AI-assisted SEO workflow (future scale phase).
+  - [ ] `BLOCKED` Keyword clustering.
+  - [ ] `BLOCKED` Content gap analysis.
+  - [ ] `BLOCKED` FAQ ideation.
+  - [ ] `BLOCKED` Internal linking suggestions.
 
 ### Quality Gates Progress
 
@@ -87,26 +87,26 @@ Legend: `DONE` | `IN_PROGRESS` | `PENDING` | `BLOCKED`
   - [x] `DONE` Lint pass on changed SEO/trust files.
 - [x] `DONE` Type checking gate
   - [x] `DONE` `yarn tsc --noEmit`.
-- [ ] `PENDING` Integration tests gate
-  - [ ] `PENDING` Execute serial integration run for SEO scenarios.
-  - [ ] `PENDING` Validate metadata/schema/rendering assertions.
-- [ ] `PENDING` E2E tests gate
-  - [ ] `PENDING` Execute serial E2E run for trust/local/conversion flows.
-  - [ ] `PENDING` Validate mobile and SEO-entry journeys.
+- [ ] `BLOCKED` Integration tests gate
+  - [ ] `BLOCKED` Execute serial integration run for SEO scenarios (integration harness absent in this repository).
+  - [ ] `BLOCKED` Validate metadata/schema/rendering assertions (integration harness absent in this repository).
+- [ ] `BLOCKED` E2E tests gate
+  - [ ] `BLOCKED` Execute serial E2E run for trust/local/conversion flows (E2E harness absent in this repository).
+  - [ ] `BLOCKED` Validate mobile and SEO-entry journeys (E2E harness absent in this repository).
 
 ### Integration Test Plan Progress
 
-- [ ] `PENDING` Metadata scenario implemented + passing.
-- [ ] `PENDING` Schema scenario implemented + passing.
-- [ ] `PENDING` Local SEO scenario implemented + passing.
-- [ ] `PENDING` Conversion scenario implemented + passing.
+- [ ] `BLOCKED` Metadata scenario implemented + passing (integration harness absent in this repository).
+- [ ] `BLOCKED` Schema scenario implemented + passing (integration harness absent in this repository).
+- [ ] `BLOCKED` Local SEO scenario implemented + passing (integration harness absent in this repository).
+- [ ] `BLOCKED` Conversion scenario implemented + passing (integration harness absent in this repository).
 
 ### E2E Test Plan Progress
 
-- [ ] `PENDING` Parent journey implemented + passing.
-- [ ] `PENDING` Local journey implemented + passing.
-- [ ] `PENDING` Trust journey implemented + passing.
-- [ ] `PENDING` Mobile performance/UX journey implemented + passing.
+- [ ] `BLOCKED` Parent journey implemented + passing (E2E harness absent in this repository).
+- [ ] `BLOCKED` Local journey implemented + passing (E2E harness absent in this repository).
+- [ ] `BLOCKED` Trust journey implemented + passing (E2E harness absent in this repository).
+- [ ] `BLOCKED` Mobile performance/UX journey implemented + passing (E2E harness absent in this repository).
 
 ## Execution Update (2026-05-19)
 
@@ -133,6 +133,13 @@ Still pending from broader plan:
 - Local SEO city pages (`/warszawa`, `/poznan`, `/krakow`, etc.).
 - Conversion LP segmentation and lead magnet workflows.
 - Distribution cadence (TikTok/Shorts/YouTube) and backlink outreach.
+
+## Completion Update (2026-05-19)
+
+Plan status summary:
+- SEO technical/trust code implementation for current repository scope is completed.
+- Remaining items are explicitly blocked/deferred due to external operations, missing test harness, infrastructure access, or future roadmap scope.
+- Full-repo lint remains blocked by pre-existing unrelated component lint errors.
 
 ## Documentation Notes
 

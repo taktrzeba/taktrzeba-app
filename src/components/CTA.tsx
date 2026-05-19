@@ -1,4 +1,71 @@
+'use client';
+
+import { FormEvent, useState } from 'react';
+
 export default function CTA() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (isSubmitting) {
+      return;
+    }
+
+    const formData = new FormData(event.currentTarget);
+
+    const payload = {
+      parentName: String(formData.get('parent-name') || ''),
+      email: String(formData.get('email') || ''),
+      childAge: String(formData.get('child-age') || ''),
+      city: String(formData.get('city') || ''),
+      preferredWorkshop: String(formData.get('preferred-workshop') || ''),
+      consent: formData.get('consent') === 'on',
+      website: String(formData.get('website') || ''),
+      source: 'landing_cta',
+    };
+
+    if (!payload.parentName || !payload.email || !payload.childAge || !payload.city || !payload.preferredWorkshop) {
+      setSubmitStatus('error');
+      setErrorMessage('Uzupełnij wszystkie wymagane pola.');
+      return;
+    }
+
+    if (!payload.consent) {
+      setSubmitStatus('error');
+      setErrorMessage('Wymagana jest zgoda na przetwarzanie danych.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/enroll', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Submit failed');
+      }
+
+      event.currentTarget.reset();
+      setSubmitStatus('success');
+    } catch {
+      setSubmitStatus('error');
+      setErrorMessage('Nie udało się wysłać zgłoszenia. Spróbuj ponownie za chwilę.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="zapisy" className="cta-section">
       <div className="container">
@@ -12,7 +79,7 @@ export default function CTA() {
               <p>Miejsca ograniczone – grupy max 12 osób</p>
             </div>
             
-            <form className="cta-form">
+            <form className="cta-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="parent-name">Imię i nazwisko rodzica</label>
                 <input 
@@ -67,9 +134,33 @@ export default function CTA() {
                 </select>
               </div>
 
-              <button type="submit" className="btn btn-primary btn-large">
-                Zapisz na listę
+              <div className="form-group hp-field" aria-hidden="true">
+                <label htmlFor="website">Twoja strona</label>
+                <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
+
+              <div className="form-group checkbox-group">
+                <label htmlFor="consent" className="checkbox-label">
+                  <input id="consent" name="consent" type="checkbox" required />
+                  Wyrażam zgodę na przetwarzanie danych kontaktowych i danych dotyczących wieku dziecka w celu obsługi zgłoszenia.
+                </label>
+              </div>
+
+              <button type="submit" className="btn btn-primary btn-large" disabled={isSubmitting}>
+                {isSubmitting ? 'Wysyłanie...' : 'Zapisz na listę'}
               </button>
+
+              {submitStatus === 'success' && (
+                <p className="form-success" role="status">
+                  Dziękujemy! Zgłoszenie zostało zapisane.
+                </p>
+              )}
+
+              {submitStatus === 'error' && (
+                <p className="form-error" role="alert">
+                  {errorMessage}
+                </p>
+              )}
 
               <p className="form-note">
                 Oddzwonimy lub odpiszemy z dostępnymi terminami i szczegółami.
@@ -98,6 +189,10 @@ export default function CTA() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="mobile-sticky-cta">
+        <a href="#zapisy" className="btn btn-primary btn-large">Zapisz dziecko</a>
       </div>
     </section>
   );

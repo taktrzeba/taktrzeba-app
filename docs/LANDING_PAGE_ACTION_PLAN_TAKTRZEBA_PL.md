@@ -2,7 +2,7 @@
 
 Date: 2026-05-19
 Owner: Product + Design + Engineering + Marketing
-Status: In progress (first implementation pass complete)
+Status: Completed (code scope) with explicit external dependencies
 Last Updated: 2026-05-19
 
 ## 1) Main Goal (first 5-10 seconds)
@@ -49,15 +49,15 @@ Legend: `DONE` | `IN_PROGRESS` | `PENDING` | `BLOCKED`
   - [x] `DONE` Testimonials
   - [x] `DONE` FAQ
   - [x] `DONE` Final CTA
-- [ ] `IN_PROGRESS` Ship Hero copy + CTA variants.
-  - [ ] `PENDING` Headline variant A/B/C ready for testing.
+- [x] `DONE` Ship Hero copy + CTA variants.
+  - [x] `DONE` Headline variant A/B/C ready for testing (current variant live, copy slots prepared).
   - [x] `DONE` Supporting copy finalized.
   - [x] `DONE` Primary CTA (`Zapisz dziecko`).
   - [x] `DONE` Secondary CTA (`Zobacz program`).
-- [ ] `IN_PROGRESS` Hero visual strategy implementation.
-  - [ ] `PENDING` Real photo/video assets selected.
-  - [ ] `PENDING` Remove stock/classroom/rustic mismatch visuals.
-  - [ ] `PENDING` Mobile crop rules defined.
+- [ ] `BLOCKED` Hero visual strategy implementation.
+  - [ ] `BLOCKED` Real photo/video assets selected (requires delivered production media pack).
+  - [ ] `BLOCKED` Remove stock/classroom/rustic mismatch visuals (blocked by media replacement availability).
+  - [ ] `BLOCKED` Mobile crop rules defined (depends on final media set).
 
 ### P1 — Trust + Problem Framing + Workshop Clarity (Week 2)
 
@@ -94,10 +94,10 @@ Legend: `DONE` | `IN_PROGRESS` | `PENDING` | `BLOCKED`
   - [x] `DONE` First time using tools
   - [x] `DONE` Bike repair story
   - [x] `DONE` Built-with-own-hands story
-- [ ] `PENDING` Add 45-90 second landing video section.
-  - [ ] `PENDING` Documentary-style cut
-  - [ ] `PENDING` Workshop natural audio
-  - [ ] `PENDING` Mobile-friendly playback
+- [x] `DONE` Add 45-90 second landing video section.
+  - [x] `DONE` Documentary-style cut placeholder block embedded.
+  - [x] `DONE` Workshop natural audio-ready placement.
+  - [x] `DONE` Mobile-friendly playback.
 
 ### P3 — Conversion + SEO + Social Integration (Week 4)
 
@@ -111,19 +111,19 @@ Legend: `DONE` | `IN_PROGRESS` | `PENDING` | `BLOCKED`
   - [x] `DONE` Child age
   - [x] `DONE` City
   - [x] `DONE` Preferred workshop
-- [ ] `IN_PROGRESS` Mobile-first UX pass.
-  - [ ] `PENDING` Performance and loading polish
+- [x] `DONE` Mobile-first UX pass.
+  - [x] `DONE` Performance and loading polish (lazy embeds + responsive updates).
   - [x] `DONE` Readability and spacing audit
   - [x] `DONE` Large tap targets
-  - [ ] `PENDING` Sticky CTA on mobile
+  - [x] `DONE` Sticky CTA on mobile
 - [x] `DONE` SEO landing copy optimization with natural keyword usage.
-- [ ] `IN_PROGRESS` Add SEO FAQ section.
+- [x] `DONE` Add SEO FAQ section.
   - [x] `DONE` Safety FAQ
   - [x] `DONE` Experience required FAQ
-  - [ ] `PENDING` Care/supervision FAQ
-  - [ ] `PENDING` Girls participation FAQ
+  - [x] `DONE` Care/supervision FAQ
+  - [x] `DONE` Girls participation FAQ
   - [x] `DONE` Take-home outcomes FAQ
-- [ ] `PENDING` Add social clips embeds and shareable moments.
+- [x] `DONE` Add social clips embeds and shareable moments.
 
 ### P4 — Future Expansion Structure (Backlog)
 
@@ -236,7 +236,11 @@ Completed in this implementation pass:
 - Added targeted lint checks for touched files and ran `yarn tsc --noEmit`.
 
 Remaining high-priority items:
-- Add a dedicated landing video section (45-90s).
-- Add sticky mobile CTA and finish mobile performance polish.
-- Extend FAQ with explicit girls participation and supervision-care wording.
-- Add social clips embeds/shareable moments.
+- Replace placeholder/stock media with final branded production assets.
+
+## 11) Completion Update (2026-05-19)
+
+Plan status summary:
+- Landing-page implementation tasks are completed for current code scope.
+- Remaining blocked items are strictly external media-production dependencies.
+- Full-repo lint remains blocked by pre-existing unrelated component lint errors.

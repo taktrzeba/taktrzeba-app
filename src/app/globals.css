@@ -7,7 +7,7 @@
   --primary-dark: #1e4620;
   --secondary-color: #d97706;
   --text-dark: #1f2937;
-  --text-light: #6b7280;
+  --text-light: #374151;
   --bg-light: #f9fafb;
   --bg-white: #ffffff;
   --border-color: #e5e7eb;
@@ -718,6 +718,10 @@ p {
 
 .quick-link-name {
   white-space: nowrap;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-top: 4px;
 }
 
 /* Trust indicators */
@@ -2498,15 +2502,197 @@ p {
    POJEDYNCZA SEKCJA KURSU
    =================================== */
 
+/* Course Overview - zawsze widoczne */
+.course-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 40px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.course-tools-preview h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.tools-preview-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tool-tag {
+  background: var(--accent-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tool-tag.more {
+  background: var(--primary-color);
+  opacity: 0.8;
+}
+
+.course-summary h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.course-summary p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Toggle button */
+.course-details-toggle {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.details-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary-color);
+  background: white;
+  color: var(--primary-color);
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.details-toggle:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(44, 95, 45, 0.3);
+}
+
+.details-toggle.expanded {
+  background: var(--primary-color);
+  color: white;
+}
+
+.details-toggle .toggle-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.details-toggle.expanded .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Detailed content - tylko gdy rozwinięte */
+.course-detailed-content {
+  animation: fadeInUp 0.5s ease-out;
+  border-top: 3px solid var(--primary-color);
+  padding-top: 40px;
+  margin-top: 20px;
+}
+
+.course-tools-box {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  padding: 30px;
+  border-radius: 16px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.course-tools-box h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.tools-list-main {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tools-list-main li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.tools-list-main li:last-child {
+  border-bottom: none;
+}
+
+.tool-bullet {
+  color: var(--accent-color);
+  margin-right: 12px;
+  font-weight: bold;
+}
+
+/* Program accordion enhanced */
+.course-program-detailed {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.course-program-detailed h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.program-intro {
+  color: #64748b;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.day-title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.day-number {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.day-title {
+  font-size: 1.1rem;
+  margin-top: 4px;
+  color: #1e293b;
+}
+
 .single-course-section {
   padding: 80px 0;
   background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
   border-bottom: 1px solid var(--border-color);
   position: relative;
+  color: var(--text-dark);
 }
 
 .single-course-section:nth-child(odd) {
   background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  color: var(--text-dark);
 }
 
 .course-section-header {
@@ -2538,8 +2724,9 @@ p {
 
 .course-goal-large {
   font-size: 1.25rem;
-  color: var(--text-light);
+  color: var(--text-dark);
   font-style: italic;
+  opacity: 0.8;
 }
 
 .course-header-image {

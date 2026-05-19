@@ -10,32 +10,32 @@ export default function Gallery() {
 
   const images = [
     {
-      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&q=80',
+      src: 'https://images.prismic.io/taktrzeba/agxM-qYofJOwHXOB_taktrzeba-6.png?auto=format,compress',
       alt: 'Młodzież pracująca z narzędziami',
       caption: 'Prawdziwa praca z narzędziami'
     },
     {
-      src: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=400&fit=crop&q=80',
+      src: 'https://images.prismic.io/taktrzeba/agxM-6YofJOwHXOC_taktrzeba-7.png?auto=format,compress',
       alt: 'Warsztat stolarski',
       caption: 'Warsztat przystosowany do młodzieży'
     },
     {
-      src: 'https://images.unsplash.com/photo-1543269865-0a740d43b90c?w=600&h=400&fit=crop&q=80',
+      src: 'https://images.prismic.io/taktrzeba/agxM_KYofJOwHXOD_taktrzeba-8.png?auto=format,compress',
       alt: 'Praca zespołowa',
       caption: 'Małe grupy, indywidualne podejście'
     },
     {
-      src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop&q=80',
+      src: 'https://images.prismic.io/taktrzeba/agxM_aYofJOwHXOE_taktrzeba-9.png?auto=format,compress',
       alt: 'Gotowe projekty',
       caption: 'Efekty, które zabierasz do domu'
     },
     {
-      src: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop&q=80',
+      src: 'https://images.prismic.io/taktrzeba/agxM_qYofJOwHXOF_taktrzeba-10.png?auto=format,compress',
       alt: 'Koncentracja przy pracy',
       caption: 'Uczenie przez praktykę'
     },
     {
-      src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&q=80',
+      src: 'https://images.prismic.io/taktrzeba/agxM-KYofJOwHXN__taktrzeba-4.png?auto=format,compress',
       alt: 'Młodzi ludzie uczący się',
       caption: 'Rozwój przez działanie'
     }

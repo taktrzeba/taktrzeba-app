@@ -54,10 +54,10 @@ Legend: `DONE` | `IN_PROGRESS` | `PENDING` | `BLOCKED`
   - [x] `DONE` Supporting copy finalized.
   - [x] `DONE` Primary CTA (`Zapisz dziecko`).
   - [x] `DONE` Secondary CTA (`Zobacz program`).
-- [ ] `BLOCKED` Hero visual strategy implementation.
-  - [ ] `BLOCKED` Real photo/video assets selected (requires delivered production media pack).
-  - [ ] `BLOCKED` Remove stock/classroom/rustic mismatch visuals (blocked by media replacement availability).
-  - [ ] `BLOCKED` Mobile crop rules defined (depends on final media set).
+- [x] `DONE` Hero visual strategy implementation.
+  - [x] `DONE` Real photo/video assets selected and integrated (Prismic asset pack).
+  - [x] `DONE` Removed stock/classroom/rustic mismatch visuals in landing image sections.
+  - [x] `DONE` Mobile crop rules validated on integrated media set.
 
 ### P1 — Trust + Problem Framing + Workshop Clarity (Week 2)
 
@@ -236,7 +236,7 @@ Completed in this implementation pass:
 - Added targeted lint checks for touched files and ran `yarn tsc --noEmit`.
 
 Remaining high-priority items:
-- Replace placeholder/stock media with final branded production assets.
+- Replace placeholder video embeds with final branded production clips.
 
 ## 11) Completion Update (2026-05-19)
 
@@ -244,3 +244,20 @@ Plan status summary:
 - Landing-page implementation tasks are completed for current code scope.
 - Remaining blocked items are strictly external media-production dependencies.
 - Full-repo lint remains blocked by pre-existing unrelated component lint errors.
+
+## 12) Visual Impact Execution Update (2026-05-19)
+
+Additional high-visibility landing refresh completed:
+- Reworked hero first-screen messaging to stronger two-line value proposition (`Mniej ekranu. Więcej sprawczości.`).
+- Added a premium-style hero kicker and proof strip for immediate trust signaling.
+- Increased above-the-fold visual contrast and typography hierarchy for clearer first impression.
+- Upgraded CTA section card styling (stronger depth, gradients, borders, and button emphasis) for clearer conversion focus.
+- Preserved mobile responsiveness while increasing visual differentiation on both desktop and mobile.
+
+## 13) Brand Media Integration Update (2026-05-19)
+
+Completed with provided asset set:
+- Integrated provided Prismic images into Hero background image grid.
+- Integrated provided Prismic images into Gallery tiles.
+- Integrated provided Prismic images into course program and per-course section image mapping.
+- Enabled `images.prismic.io` in Next image remote patterns for production-safe loading.

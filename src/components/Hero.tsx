@@ -11,49 +11,17 @@ export default function Hero() {
 
   return (
     <section className="hero-section">
-      {/* Animated background gradient */}
-      <div className="hero-gradient-bg"></div>
-      
-      {/* Background images grid */}
-      <div className="hero-images-background">
-        <div className="hero-image-item fade-in delay-1">
-          <Image 
-            src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=500&h=400&fit=crop&q=80" 
-            alt="Narzędzia warsztatowe - klucze i narzędzia" 
-            width={500} 
-            height={400}
-            className="hero-bg-img"
-            priority
-          />
-        </div>
-        <div className="hero-image-item fade-in delay-2">
-          <Image 
-            src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=500&h=400&fit=crop&q=80" 
-            alt="Praca przy drewnie - stolarka" 
-            width={500} 
-            height={400}
-            className="hero-bg-img"
-          />
-        </div>
-        <div className="hero-image-item fade-in delay-3">
-          <Image 
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop&q=80" 
-            alt="Naprawa roweru - mechanika" 
-            width={500} 
-            height={400}
-            className="hero-bg-img"
-          />
-        </div>
-        <div className="hero-image-item fade-in delay-4">
-          <Image 
-            src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=500&h=400&fit=crop&q=80" 
-            alt="Praca techniczna - elektryka" 
-            width={500} 
-            height={400}
-            className="hero-bg-img"
-          />
-        </div>
+      <div className="hero-media">
+        <Image
+          src="https://images.prismic.io/taktrzeba/agxM_qYofJOwHXOF_taktrzeba-10.png?auto=format,compress"
+          alt="Młodzież podczas praktycznych warsztatów TakTrzeba"
+          width={1920}
+          height={1080}
+          className="hero-main-image"
+          priority
+        />
       </div>
+      <div className="hero-overlay" aria-hidden="true"></div>
 
       <div className="container">
         <div className="hero-content">
@@ -64,12 +32,14 @@ export default function Hero() {
             <span className="badge-text">WAKACJE 2026 • LIPIEC & SIERPIEŃ</span>
           </div>
 
+          <p className="hero-kicker fade-in delay-1">Praktyczne warsztaty dla młodzieży 14-16 lat</p>
+
           {/* Main heading with enhanced typography */}
           <h1 className="hero-title fade-in delay-1">
-            <span className="title-highlight">tak trzeba</span>
-            <span className="hero-icon float-animation">🛠️</span>
+            <span className="hero-title-line">Mniej ekranu.</span>
+            <span className="hero-title-line title-highlight">Więcej sprawczości.</span>
           </h1>
-          <p className="hero-brand-subtitle fade-in delay-1">taktrzeba.pl</p>
+          <p className="hero-brand-subtitle fade-in delay-1">Wakacyjne warsztaty rzemieślnicze • taktrzeba.pl</p>
 
           {/* Tagline with glassmorphism */}
           <div className="hero-tagline-box fade-in delay-2">
@@ -80,8 +50,14 @@ export default function Hero() {
             </p>
           </div>
 
+          <div className="hero-proof-strip fade-in delay-3">
+            <div className="hero-proof-item">4 warsztaty • 1 tydzień</div>
+            <div className="hero-proof-item">Małe grupy do 12 osób</div>
+            <div className="hero-proof-item">Stała opieka i ubezpieczenie</div>
+          </div>
+
           {/* Stats cards */}
-          <div className="hero-stats fade-in delay-3">
+          <div className="hero-stats fade-in delay-4">
             <div className="stat-card scale-in delay-3">
               <div className="stat-number">12</div>
               <div className="stat-label">Uczestników max</div>
@@ -178,10 +154,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Decorative elements */}
-      <div className="hero-decoration hero-decoration-1"></div>
-      <div className="hero-decoration hero-decoration-2"></div>
-      <div className="hero-decoration hero-decoration-3"></div>
     </section>
   );
 }

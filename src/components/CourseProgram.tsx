@@ -35,10 +35,10 @@ export default function CourseProgram() {
   // Mapujemy dane z syllabusa na format używany w tym komponencie
   const courses = coursesSyllabus.map((course) => {
     const imageMap: { [key: string]: string } = {
-      '🔧': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop&q=80',
-      '🪚': 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&h=400&fit=crop&q=80',
-      '🚰': 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=400&fit=crop&q=80',
-      '⚡': 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&h=400&fit=crop&q=80'
+      '🔧': 'https://images.prismic.io/taktrzeba/agxM-qYofJOwHXOB_taktrzeba-6.png?auto=format,compress',
+      '🪚': 'https://images.prismic.io/taktrzeba/agxM-6YofJOwHXOC_taktrzeba-7.png?auto=format,compress',
+      '🚰': 'https://images.prismic.io/taktrzeba/agxM_KYofJOwHXOD_taktrzeba-8.png?auto=format,compress',
+      '⚡': 'https://images.prismic.io/taktrzeba/agxM_aYofJOwHXOE_taktrzeba-9.png?auto=format,compress'
     };
 
     return {

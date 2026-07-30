@@ -37,7 +37,7 @@ export default function Hero() {
           {/* Main heading with enhanced typography */}
           <h1 className="hero-title">
             <span className="hero-title-line">Mniej ekranu.</span>
-            <span className="hero-title-line title-highlight">Więcej sprawczości.</span>
+            <span className="hero-title-line title-highlight">Więcej sprawczości i satysfakcji.</span>
           </h1>
           <p className="hero-brand-subtitle">Wakacyjne warsztaty rzemieślnicze • taktrzeba.pl</p>
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { trackEvent } from '@/lib/analytics';
+import { GA_EVENT_NAMES, trackEvent } from '@/lib/analytics';
 
 export default function FAQ() {
   const faqs = [
@@ -97,7 +97,7 @@ export default function FAQ() {
                 onToggle={(event) => {
                   const target = event.currentTarget as HTMLDetailsElement;
                   if (target.open) {
-                    trackEvent('faq_open', { question: faq.question });
+                    trackEvent(GA_EVENT_NAMES.FAQ_OPEN, { question: faq.question });
                   }
                 }}
               >

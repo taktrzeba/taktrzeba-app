@@ -7,6 +7,15 @@ declare global {
 
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-4TDNRT3DS2';
 
+export const GA_EVENT_NAMES = {
+  PAGE_VIEW: 'landing_page_view',
+  CTA_CLICK: 'landing_cta_click',
+  FORM_START: 'landing_form_start',
+  FORM_SUBMIT: 'landing_form_submit',
+  FAQ_OPEN: 'landing_faq_open',
+  OUTBOUND_CLICK: 'landing_outbound_click',
+} as const;
+
 export function trackPageView(path?: string) {
   if (typeof window === 'undefined' || !window.gtag) {
     return;
@@ -16,6 +25,10 @@ export function trackPageView(path?: string) {
 
   window.gtag('config', GA_MEASUREMENT_ID, {
     page_path: pagePath,
+  });
+  window.gtag('event', GA_EVENT_NAMES.PAGE_VIEW, {
+    page_path: pagePath,
+    page_title: document.title,
   });
 }
 

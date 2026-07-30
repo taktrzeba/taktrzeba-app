@@ -1,7 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
-import { trackEvent } from '@/lib/analytics';
+import { GA_EVENT_NAMES, trackEvent } from '@/lib/analytics';
 
 export default function CTA() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,7 +15,7 @@ export default function CTA() {
       return;
     }
 
-    trackEvent('form_start', { source: 'landing_cta' });
+    trackEvent(GA_EVENT_NAMES.FORM_START, { source: 'landing_cta' });
 
     const formData = new FormData(event.currentTarget);
 
@@ -59,7 +59,7 @@ export default function CTA() {
         throw new Error('Submit failed');
       }
 
-      trackEvent('form_submit', {
+      trackEvent(GA_EVENT_NAMES.FORM_SUBMIT, {
         source: 'landing_cta',
         preferred_workshop: payload.preferredWorkshop,
       });
@@ -157,7 +157,7 @@ export default function CTA() {
                 type="submit"
                 className="btn btn-primary btn-large"
                 disabled={isSubmitting}
-                onClick={() => trackEvent('cta_click', { location: 'cta_form' })}
+                onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'cta_form' })}
               >
                 {isSubmitting ? 'Wysyłanie...' : 'Zapisz na listę'}
               </button>
@@ -182,7 +182,7 @@ export default function CTA() {
                 href="#program"
                 className="btn btn-secondary btn-large"
                 style={{ marginTop: '0.75rem' }}
-                onClick={() => trackEvent('cta_click', { location: 'cta_secondary' })}
+                onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'cta_secondary' })}
               >
                 Zobacz program
               </a>
@@ -209,7 +209,7 @@ export default function CTA() {
       </div>
 
       <div className="mobile-sticky-cta">
-        <a href="#zapisy" className="btn btn-primary btn-large" onClick={() => trackEvent('cta_click', { location: 'mobile_sticky' })}>Zapisz dziecko</a>
+        <a href="#zapisy" className="btn btn-primary btn-large" onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'mobile_sticky' })}>Zapisz dziecko</a>
       </div>
     </section>
   );

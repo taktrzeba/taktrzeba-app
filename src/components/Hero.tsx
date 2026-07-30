@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { GA_EVENT_NAMES, trackEvent } from '@/lib/analytics';
 import { coursesSyllabus } from '@/data/coursesSyllabus';
 
 export default function Hero() {
@@ -98,12 +99,22 @@ export default function Hero() {
 
           {/* CTA buttons with enhanced styling */}
           <div className="hero-cta">
-            <a href="#zapisy" className="btn btn-primary btn-hero">
+            <a href="#zapisy" className="btn btn-primary btn-hero" onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'hero_primary', destination: 'enrollment' })}>
               <span className="btn-text">Zapisz dziecko</span>
               <span className="btn-icon">→</span>
             </a>
-            <a href="#program" className="btn btn-secondary btn-hero">
+            <a href="#program" className="btn btn-secondary btn-hero" onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'hero_secondary', destination: 'program' })}>
               <span className="btn-text">Zobacz program</span>
+            </a>
+            <a
+              href="https://jellyhealth.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-tertiary btn-hero"
+              onClick={() => trackEvent(GA_EVENT_NAMES.OUTBOUND_CLICK, { location: 'hero', destination: 'jellyhealth_org', link_type: 'external' })}
+            >
+              <span className="btn-text">Odwiedź JellyHealth</span>
+              <span className="btn-icon">↗</span>
             </a>
           </div>
 

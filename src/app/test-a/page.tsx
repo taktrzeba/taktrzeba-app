@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -18,8 +18,8 @@ export default function TestAPage() {
         </p>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
-          <Link href="/landing" onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { variant: 'test_a', location: 'nav', destination: 'landing' })} style={{ padding: '0.8rem 1rem', borderRadius: '999px', background: '#2c5f2d', color: '#fff', textDecoration: 'none', fontWeight: 600 }}>
-            Go to Landing
+          <Link href="/" onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { variant: 'test_a', location: 'nav', destination: 'home' })} style={{ padding: '0.8rem 1rem', borderRadius: '999px', background: '#2c5f2d', color: '#fff', textDecoration: 'none', fontWeight: 600 }}>
+            Go to Home
           </Link>
           <Link href="/test-a" onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { variant: 'test_a', location: 'nav', destination: 'test_a' })} style={{ padding: '0.8rem 1rem', borderRadius: '999px', background: '#f59e0b', color: '#111827', textDecoration: 'none', fontWeight: 600 }}>
             Stay on Test A
@@ -32,3 +32,4 @@ export default function TestAPage() {
     </main>
   );
 }
+

@@ -1,10 +1,14 @@
-﻿import Link from 'next/link';
+﻿'use client';
+
+import Link from 'next/link';
+import { GA_EVENT_NAMES, trackEvent } from '@/lib/analytics';
 
 export default function Home() {
   return (
     <main style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', background: '#fff' }}>
       <Link
         href="/test-a"
+        onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'home', destination: 'test_a' })}
         style={{
           padding: '0.75rem 1.25rem',
           borderRadius: '0.5rem',

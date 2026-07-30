@@ -42,6 +42,13 @@ yarn build
 yarn start
 ```
 
+## Current Status
+
+- Landing page oraz podstrony informacyjne sa wdrozone w kodzie.
+- Integracja GA4 jest zaimplementowana i wymaga potwierdzenia eventow po deployu produkcyjnym.
+- Integracja Google Sheets dla zapisow jest zaimplementowana po stronie serwera, ale wymaga skonfigurowanych danych Google Cloud/Sheets.
+- Zewnetrzne kroki publikacyjne i operacyjne sa opisane w dokumentach wdrozeniowych.
+
 ## Scripts
 
 ```bash
@@ -49,6 +56,7 @@ yarn dev      # next dev
 yarn build    # next build
 yarn start    # next start
 yarn lint     # eslint
+yarn tsc --noEmit  # type check
 ```
 
 ## Project Structure
@@ -91,7 +99,7 @@ Ustaw w `.env.local` (wartosci przykladowe):
 
 ```bash
 # GA4
-NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-4TDNRT3DS2
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=twoj_token_weryfikacyjny
 
 # Google Sheets (server-side)
@@ -104,6 +112,7 @@ GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END P
 Uwagi:
 - zmienne z prefiksem `NEXT_PUBLIC_` sa widoczne po stronie klienta,
 - dane Google Service Account musza pozostac tylko po stronie serwera.
+- wartosc `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` zwykle wymaga zachowania sekwencji `\n` w jednej linii.
 
 ## Enrollment Flow
 
@@ -139,6 +148,7 @@ Minimalne kroki przed wdrozeniem:
 
 ```bash
 yarn lint
+yarn tsc --noEmit
 yarn build
 ```
 
@@ -146,3 +156,12 @@ Nastepnie:
 - sprawdz podstrony i formularz zapisow,
 - potwierdz eventy w GA4 Realtime,
 - zweryfikuj sitemap (`/sitemap.xml`) i robots (`/robots.txt`).
+
+## Deployment Notes
+
+Przed publikacja sprawdz i uzupelnij:
+- dane kontaktowe i social links,
+- obrazy produkcyjne (`/public/og-image.jpg`, `favicon.ico`, `apple-touch-icon.png` lub ich odpowiedniki w aktualnej identyfikacji),
+- token Google Search Console,
+- dzialanie zapisu do Google Sheets na srodowisku produkcyjnym,
+- eventy i konwersje w GA4 Realtime.

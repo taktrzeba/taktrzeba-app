@@ -42,9 +42,14 @@ export function trackPageView(path?: string) {
 }
 
 export function trackEvent(eventName: string, params?: Record<string, unknown>) {
-  if (typeof window === 'undefined' || !window.gtag) {
+  if (typeof window === 'undefined') {
     return;
   }
 
-  window.gtag('event', eventName, params);
+  const dataLayer = window.dataLayer;
+  if (window.gtag) {
+    window.gtag('event', eventName, params);
+  } else if (Array.isArray(dataLayer)) {
+    dataLayer.push(['event', eventName, params || {}]);
+  }
 }

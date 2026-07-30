@@ -63,6 +63,16 @@ export default function CTA() {
         source: 'landing_cta',
         preferred_workshop: payload.preferredWorkshop,
       });
+      trackEvent(GA_EVENT_NAMES.SENT, {
+        source: 'landing_cta',
+        preferred_workshop: payload.preferredWorkshop,
+      });
+      trackEvent(GA_EVENT_NAMES.SALE, {
+        source: 'landing_cta',
+        preferred_workshop: payload.preferredWorkshop,
+        value: 1,
+        currency: 'PLN',
+      });
       event.currentTarget.reset();
       setSubmitStatus('success');
     } catch {
@@ -157,7 +167,10 @@ export default function CTA() {
                 type="submit"
                 className="btn btn-primary btn-large"
                 disabled={isSubmitting}
-                onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'cta_form' })}
+                onClick={() => {
+                  trackEvent(GA_EVENT_NAMES.CLICKED, { location: 'cta_form' });
+                  trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'cta_form' });
+                }}
               >
                 {isSubmitting ? 'Wysyłanie...' : 'Zapisz na listę'}
               </button>
@@ -182,7 +195,10 @@ export default function CTA() {
                 href="#program"
                 className="btn btn-secondary btn-large"
                 style={{ marginTop: '0.75rem' }}
-                onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'cta_secondary' })}
+                onClick={() => {
+                  trackEvent(GA_EVENT_NAMES.CLICKED, { location: 'cta_secondary' });
+                  trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'cta_secondary' });
+                }}
               >
                 Zobacz program
               </a>
@@ -209,7 +225,10 @@ export default function CTA() {
       </div>
 
       <div className="mobile-sticky-cta">
-        <a href="#zapisy" className="btn btn-primary btn-large" onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'mobile_sticky' })}>Zapisz dziecko</a>
+        <a href="#zapisy" className="btn btn-primary btn-large" onClick={() => {
+          trackEvent(GA_EVENT_NAMES.CLICKED, { location: 'mobile_sticky' });
+          trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'mobile_sticky' });
+        }}>Zapisz dziecko</a>
       </div>
     </section>
   );

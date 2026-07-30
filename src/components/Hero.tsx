@@ -101,11 +101,17 @@ export default function Hero() {
 
           {/* CTA buttons with enhanced styling */}
           <div className="hero-cta">
-            <a href="#zapisy" className="btn btn-primary btn-hero" onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'hero_primary', destination: 'enrollment' })}>
+            <a href="#zapisy" className="btn btn-primary btn-hero" onClick={() => {
+              trackEvent(GA_EVENT_NAMES.CLICKED, { location: 'hero_primary', destination: 'enrollment' });
+              trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'hero_primary', destination: 'enrollment' });
+            }}>
               <span className="btn-text">Zapisz dziecko</span>
               <span className="btn-icon">→</span>
             </a>
-            <a href="#program" className="btn btn-secondary btn-hero" onClick={() => trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'hero_secondary', destination: 'program' })}>
+            <a href="#program" className="btn btn-secondary btn-hero" onClick={() => {
+              trackEvent(GA_EVENT_NAMES.CLICKED, { location: 'hero_secondary', destination: 'program' });
+              trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'hero_secondary', destination: 'program' });
+            }}>
               <span className="btn-text">Zobacz program</span>
             </a>
             <a

@@ -1,257 +1,148 @@
-# 🛠️ Tydzień Rzemiosła - Landing Page
+# TakTrzeba - Landing Page
 
-Profesjonalny landing page dla kursu "Tydzień Rzemiosła" - wakacyjnych kursów praktycznych dla młodzieży 14-16 lat.
+Strona marketingowa projektu TakTrzeba (taktrzeba.pl) dla warsztatow praktycznych dla mlodziezy 14-16 lat.
 
-## 🎯 Funkcje
+Last updated: 2026-07-30
 
-- ✅ Pełna optymalizacja SEO (meta tags, structured data, sitemap)
-- ✅ Responsywny design (mobile-first)
-- ✅ **20+ animacji CSS i scroll effects**
-- ✅ **Intersection Observer dla płynnych animacji**
-- ✅ **Scroll progress bar**
-- ✅ **Parallax effects**
-- ✅ **10 zdjęć z Unsplash (wymienne na własne)**
-- ✅ **Hover effects na wszystkich elementach**
-- ✅ **Image zoom i gallery overlay**
-- ✅ 9 sekcji landing page:
-  - Hero z animacjami i CTA
-  - Dlaczego ten kurs powstał
-  - Format kursu
-  - Program szczegółowy (4 zawody + zdjęcia)
-  - Korzyści dla uczestników
-  - Galeria zdjęć z hover effects
-  - Bezpieczeństwo i prowadzący
-  - Sekcja dla rodziców
-  - FAQ (12 pytań)
-  - Formularz zapisu + kontakt
-- ✅ Semantyczny HTML5
-- ✅ JSON-LD structured data dla wyszukiwarek
-- ✅ Open Graph i Twitter Cards
-- ✅ Accessibility (ARIA labels)
-- ✅ Performance optimized
+## Overview
 
-## 🚀 Szybki start
+Projekt zawiera:
+- nowoczesny landing page z sekcjami sprzedazowymi,
+- formularz zapisow z backendem API,
+- integracje z Google Sheets po stronie serwera,
+- integracje z Google Analytics 4,
+- SEO (metadata, Open Graph, sitemap, robots),
+- osobne podstrony informacyjne (np. bezpieczenstwo, kontakt, regulamin, polityka prywatnosci).
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- ESLint 9
+- CSS globalne + komponentowe style
+- Google Sheets API (`googleapis`)
+
+## Getting Started
+
+W tym repo domyslnym managerem pakietow jest `yarn`.
 
 ```bash
-# Instalacja zależności
-npm install
-
-# Uruchomienie serwera deweloperskiego
-npm run dev
-
-# Build produkcyjny
-npm run build
-
-# Uruchomienie produkcji
-npm start
+yarn install
+yarn dev
 ```
 
-Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
+Aplikacja domyslnie uruchamia sie na:
+- http://localhost:3000
 
-## 📁 Struktura projektu
-
-```
-webapp/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx          # Layout z SEO metadata
-│   │   ├── page.tsx            # Główna strona z JSON-LD
-│   │   ├── globals.css         # Globalne style + animacje
-│   │   └── sitemap.ts          # Automatyczny sitemap
-│   ├── components/
-│   │   ├── Hero.tsx            # Sekcja hero z animacjami
-│   │   ├── WhyCourse.tsx       # Dlaczego kurs
-│   │   ├── CourseFormat.tsx    # Format zajęć
-│   │   ├── CourseProgram.tsx   # Program z obrazami
-│   │   ├── Benefits.tsx        # Korzyści (animowane)
-│   │   ├── Gallery.tsx         # Galeria ze zdjęciami
-│   │   ├── Safety.tsx          # Bezpieczeństwo
-│   │   ├── ForParents.tsx      # Dla rodziców
-│   │   ├── FAQ.tsx             # FAQ (accordion)
-│   │   ├── CTA.tsx             # Formularz zapisu
-│   │   ├── ScrollProgress.tsx  # Progress bar
-│   │   └── ParallaxBackground.tsx  # Parallax effect
-│   └── hooks/
-│       └── useScrollAnimation.ts   # Hook dla animacji
-├── public/
-│   └── robots.txt             # Konfiguracja robotów
-├── README-SEO.md              # Dokumentacja SEO
-**Animacje:** Fade-in z delays, float animation dla ikony, parallax background
-
-### WhyCourse
-Wyjaśnia problem i rozwiązanie. Pokazuje grupę docelową.
-**Animacje:** Slide-in dla boxes, intersection observer
-
-### CourseFormat
-Szczegóły organizacyjne: czas, grupy, forma zajęć.
-
-### CourseProgram
-4 szczegółowe karty zawodów + zdjęcia:
-- 🔧 Mechanik rowerowy
-- 🪚 Stolarz
-- 🚰 Hydraulik
-- 🔌 Elektryk
-
-**Animacje:** Scroll reveal, hover zoom na obrazach, shimmer effect
-
-### Benefits
-Lista korzyści dla uczestników.
-**Animacje:** Staggered reveal, hover slide effect
-
-### Gallery
-6 zdjęć z kursów w grid layout.
-**Animacje:** Image zoom, overlay reveal, lift effect
-
-### Safety
-Bezpieczeństwo, organizacja, informacje o prowadzących.
-
-### ForParents
-Argumenty dla rodziców, wyjaśnienie wartości kursu.
-
-### FAQ
-12 często zadawanych pytań w formacie accordion.
-**Animacje:** Smooth expand/collapse, icon rotation
-Lista korzyści dla uczestników.
-
-### Safety
-Bezpieczeństwo, organizacja, informacje o prowadzących.
-
-### ForParents
-Argumenty dla rodziców, wyjaśnienie wartości kursu.
-
-### CTA
-Formularz kontaktowy i zapisy na kurs.
-
-## 🔍 SEO
-
-### Zaimplementowane:
-- **Meta tags**: title, description, keywords
-- **Open Graph**: Facebook, LinkedIn
-- **Twitter Cards**: dedykowane meta tagi
-- **JSON-LD**: Schema.org structured data typu Course
-- **Sitemap**: automatycznie generowany
-- **Robots.txt**: prawidłowa konfiguracja
-- **Canonical URLs**: zapobiega duplikacji
-- **Semantic HTML**: prawidłowa hierarchia
-- **Mobile-friendly**: pełna responsywność
-
-### Główne słowa kluczowe:
-- kursy zawodowe dla młodzieży
-- wakacyjne kursy praktyczne
-- stolarka dla dzieci
-- elektryka dla młodzieży
-- hydraulika kurs
-- mechanika rowerowa kurs
-- kursy rzemieślnicze Polska
-
-Szczegóły: [README-SEO.md](./README-SEO.md)
-
-## 📱 Responsywność
-
-Strona jest w pełni responsywna z breakpointami:
-- Mobile: < 480px
-- Tablet: < 768px
-- Desktop: > 768px
-
-## 🎨 Style
-
-### Kolory (CSS Variables):
-```css
---primary-color: #2c5f2d (zielony)
---primary-dark: #1e4620
---secondary-color: #d97706 (pomarańczow + Animations
-- **Images**: Next.js Image component + Unsplash
-- **Animations**: CSS @keyframes + Intersection Observer API
-- **SEO**: Built-in Next.js metadata API
-- **Deployment**: Vercel ready
-
-## 🎨 Animacje i Efekty
-
-Landing page zawiera **20+ różnych animacji**:
-- ✨ Fade-in effects
-- 🎬 Scroll-triggered animations
-- 🖱️ Hover effects (zoom, lift, slide)
-- 📊 Scroll progress bar
-- 🌊 Parallax backgrounds
-- 🔄 Smooth transitions
-- 📸 Image reveal effects
-- 🎯 Staggered animations
-
-Pełna dokumentacja: [ANIMATIONS.md](./ANIMATIONS.md)
-
-### Typografia:
-- Font główny: Geist Sans
-- Font mono: Geist Mono
-- Responsive font sizes
-
-## ⚙️ Technologie
-
-- **Framework**: Next.js 15
-- **Language**: TypeScript
-- **Styling**: CSS Modules + Custom CSS
-- **SEO**: Built-in Next.js metadata API
-- **Deployment**: Vercel ready
-
-## 📋 Przed publikacją
-
-- [ ] Zaktualizuj URL w `layout.tsx` (metadataBase)
-- [ ] Dodaj prawdziwy email i telefon w `CTA.tsx`
-- [ ] Utwórz obrazy:
-  - `/public/og-image.jpg` (1200x630px)
-  - `/public/favicon.ico`
-  - `/public/apple-touch-icon.png`
-- [ ] Google Search Console verification
-- [ ] Google Analytics setup
-- [ ] Polityka prywatności
-- [ ] Test na urządzeniach mobilnych
-- [ ] Lighthouse audit (Performance, SEO, Accessibility)
-
-## 🧪 Testowanie
+### Build produkcyjny
 
 ```bash
-# Build test
-npm run build
-
-# Lighthouse audit
-npx lighthouse http://localhost:3001 --view
+yarn build
+yarn start
 ```
 
-### Cele Lighthouse:
-- Performance: > 90
-- Accessibility: > 90
-- Best Practices: > 90
-- SEO: 100
+## Scripts
 
-## 📈 Analityka (do wdrożenia)
+```bash
+yarn dev      # next dev
+yarn build    # next build
+yarn start    # next start
+yarn lint     # eslint
+```
 
-Dodaj w `layout.tsx`:
-- Google Analytics 4
-- Facebook Pixel (opcjonalnie)
-- Hotjar (opcjonalnie)
+## Project Structure
 
-## 🔒 RODO/GDPR
+```text
+src/
+  app/
+    api/enroll/route.ts
+    bezpieczenstwo/page.tsx
+    design-system/page.tsx
+    dla-rodzicow/page.tsx
+    kontakt/page.tsx
+    o-nas/page.tsx
+    polityka-prywatnosci/page.tsx
+    regulamin/page.tsx
+    globals.css
+    layout.tsx
+    page.tsx
+    robots.ts
+    sitemap.ts
+  components/
+    Analytics.tsx
+    CTA.tsx
+    FAQ.tsx
+    Hero.tsx
+    Testimonials.tsx
+    ...
+  data/
+    coursesSyllabus.ts
+  hooks/
+    useScrollAnimation.ts
+  lib/
+    analytics.ts
+    enrollment.ts
+```
 
-Przed publikacją dodaj:
-- Polityka prywatności
-- Banner cookies
-- Regulamin
-- Zgody marketingowe w formularzu
+## Environment Variables
 
-## 📞 Kontakt
+Ustaw w `.env.local` (wartosci przykladowe):
 
-Formularz znajduje się w sekcji #zapisy na stronie głównej.
+```bash
+# GA4
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=twoj_token_weryfikacyjny
 
-## Learn More
+# Google Sheets (server-side)
+GOOGLE_SHEETS_SPREADSHEET_ID=...
+GOOGLE_SHEETS_WORKSHEET_NAME=...
+GOOGLE_SERVICE_ACCOUNT_EMAIL=...
+GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+```
 
-To learn more about Next.js, take a look at the following resources:
+Uwagi:
+- zmienne z prefiksem `NEXT_PUBLIC_` sa widoczne po stronie klienta,
+- dane Google Service Account musza pozostac tylko po stronie serwera.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Enrollment Flow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Uzytkownik wypelnia formularz w sekcji CTA.
+2. Frontend wysyla dane do `POST /api/enroll`.
+3. Serwer waliduje payload.
+4. Po poprawnej walidacji rekord jest dopisywany do Google Sheets.
 
-## Deploy on Vercel
+Kod odpowiedzialny za zapis i walidacje:
+- `src/lib/enrollment.ts`
+- `src/app/api/enroll/route.ts`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Analytics (GA4)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+GA4 jest ladowane w `src/app/layout.tsx`, a helpery eventow sa w:
+- `src/lib/analytics.ts`
+- `src/components/Analytics.tsx`
+
+Domyslny fallback measurement ID jest zdefiniowany w kodzie, ale rekomendowane jest ustawienie `NEXT_PUBLIC_GA_MEASUREMENT_ID` w srodowisku.
+
+## SEO i publikacja
+
+Szczegolowe checklisty i plany:
+- `README-SEO.md`
+- `DEPLOY-CHECKLIST.md`
+- `docs/GA4_ACTION_PLAN_TAKTRZEBA_PL.md`
+- `docs/GOOGLE_SHEETS_ENROLLMENT_ACTION_PLAN_TAKTRZEBA_PL.md`
+- `docs/LANDING_PAGE_ACTION_PLAN_TAKTRZEBA_PL.md`
+
+## QA
+
+Minimalne kroki przed wdrozeniem:
+
+```bash
+yarn lint
+yarn build
+```
+
+Nastepnie:
+- sprawdz podstrony i formularz zapisow,
+- potwierdz eventy w GA4 Realtime,
+- zweryfikuj sitemap (`/sitemap.xml`) i robots (`/robots.txt`).

@@ -1,3 +1,7 @@
+'use client';
+
+import { trackEvent } from '@/lib/analytics';
+
 export default function FAQ() {
   const faqs = [
     {
@@ -87,7 +91,16 @@ export default function FAQ() {
           
           <div className="faq-list">
             {faqs.map((faq, index) => (
-              <details key={index} className="faq-item">
+              <details
+                key={index}
+                className="faq-item"
+                onToggle={(event) => {
+                  const target = event.currentTarget as HTMLDetailsElement;
+                  if (target.open) {
+                    trackEvent('faq_open', { question: faq.question });
+                  }
+                }}
+              >
                 <summary className="faq-question">
                   <span>{faq.question}</span>
                   <span className="faq-icon">▼</span>

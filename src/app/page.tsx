@@ -1,182 +1,21 @@
-import Hero from '@/components/Hero';
-import WhyCourse from '@/components/WhyCourse';
-import CourseFormat from '@/components/CourseFormat';
-import CourseProgram from '@/components/CourseProgram';
-import CourseDetails from '@/components/CourseDetails';
-import CourseSection from '@/components/CourseSection';
-import Benefits from '@/components/Benefits';
-import Gallery from '@/components/Gallery';
-import Safety from '@/components/Safety';
-import ForParents from '@/components/ForParents';
-import FAQ from '@/components/FAQ';
-import CTA from '@/components/CTA';
-import Testimonials from '@/components/Testimonials';
-import LandingVideo from '@/components/LandingVideo';
-import ParallaxBackground from '@/components/ParallaxBackground';
-import ScrollProgress from '@/components/ScrollProgress';
-import AnchorHandler from '@/components/AnchorHandler';
-import { coursesSyllabus } from '@/data/coursesSyllabus';
+﻿import Link from 'next/link';
 
 export default function Home() {
-  // Mapowanie kursów na ID i obrazy
-  const courseConfigs = [
-    {
-      courseId: 'kurs-mechanik-rowerowy',
-      imageUrl: 'https://images.prismic.io/taktrzeba/agxM-qYofJOwHXOB_taktrzeba-6.png?auto=format,compress'
-    },
-    {
-      courseId: 'kurs-stolarka',
-      imageUrl: 'https://images.prismic.io/taktrzeba/agxM-6YofJOwHXOC_taktrzeba-7.png?auto=format,compress'
-    },
-    {
-      courseId: 'kurs-hydraulika',
-      imageUrl: 'https://images.prismic.io/taktrzeba/agxM_KYofJOwHXOD_taktrzeba-8.png?auto=format,compress'
-    },
-    {
-      courseId: 'kurs-elektryka',
-      imageUrl: 'https://images.prismic.io/taktrzeba/agxM_aYofJOwHXOE_taktrzeba-9.png?auto=format,compress'
-    }
-  ];
-
-  // JSON-LD structured data dla SEO
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Course',
-    name: 'tak trzeba - Wakacyjny kurs praktyczny dla młodzieży',
-    description: 'Praktyczny kurs rzemieślniczy dla młodzieży 14-16 lat. Stolarka, elektryka, hydraulika i mechanika rowerowa. 5 dni intensywnej nauki przez praktykę.',
-    provider: {
-      '@type': 'Organization',
-      name: 'tak trzeba',
-      url: 'https://taktrzeba.pl'
-    },
-    hasCourseInstance: [
-      {
-        '@type': 'CourseInstance',
-        courseMode: 'onsite',
-        duration: 'P5D',
-        inLanguage: 'pl'
-      }
-    ],
-    audience: {
-      '@type': 'EducationalAudience',
-      educationalRole: 'student',
-      audienceType: 'młodzież 14-16 lat'
-    },
-    coursePrerequisites: 'Brak wymagań wstępnych',
-    educationalLevel: 'Początkujący',
-    teaches: [
-      'Podstawy stolarki',
-      'Podstawy elektryki',
-      'Podstawy hydrauliki',
-      'Naprawa rowerów',
-      'Praca z narzędziami',
-      'Bezpieczeństwo pracy'
-    ],
-    offers: {
-      '@type': 'Offer',
-      category: 'Paid',
-      availability: 'https://schema.org/InStock'
-    }
-  };
-
   return (
-    <>
-      <AnchorHandler />
-      <ScrollProgress />
-      <ParallaxBackground />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <main>
-        <Hero />
-        <Gallery />
-        <WhyCourse />
-        <CourseFormat />
-        <CourseProgram />
-
-        <section className="course-format-section">
-          <div className="container">
-            <div className="format-highlight">
-              <p><strong>Sprawdź terminy i dostępność miejsc</strong></p>
-              <a href="#zapisy" className="btn btn-primary btn-large">Sprawdź terminy</a>
-            </div>
-          </div>
-        </section>
-        
-        {/* Sekcje szczegółowe dla każdego kursu */}
-        {coursesSyllabus.map((course, index) => (
-          <CourseSection
-            key={index}
-            course={course}
-            courseId={courseConfigs[index].courseId}
-            imageUrl={courseConfigs[index].imageUrl}
-          />
-        ))}
-        
-        <ForParents />
-        <CourseDetails />
-        <Benefits />
-        <Safety />
-        <Testimonials />
-        <LandingVideo />
-
-        <section className="course-format-section">
-          <div className="container">
-            <div className="format-highlight">
-              <p><strong>Masz pytania? Porozmawiaj z nami lub zapisz dziecko na listę.</strong></p>
-              <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="#zapisy" className="btn btn-primary btn-large">Zapisz na listę</a>
-                <a href="/kontakt" className="btn btn-secondary btn-large">Porozmawiaj z nami</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <FAQ />
-        <CTA />
-      </main>
-      <footer className="site-footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-section">
-              <h4>Kursy</h4>
-              <ul>
-                {coursesSyllabus.map((course, index) => (
-                  <li key={index}>
-                    <a href={`#${courseConfigs[index].courseId}`}>
-                      {course.icon} {course.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="footer-section">
-              <h4>Nawigacja</h4>
-              <ul>
-                <li><a href="#o-kursie">O kursie</a></li>
-                <li><a href="#program">Program</a></li>
-                <li><a href="#program-szczegolowy">Program szczegółowy</a></li>
-                <li><a href="#zapisy">Zapisy</a></li>
-                <li><a href="/o-nas">O nas</a></li>
-                <li><a href="/dla-rodzicow">Dla rodziców</a></li>
-                <li><a href="/bezpieczenstwo">Bezpieczeństwo</a></li>
-                <li><a href="/kontakt">Kontakt</a></li>
-                <li><a href="/regulamin">Regulamin</a></li>
-              </ul>
-            </div>
-            <div className="footer-section">
-              <h4>tak trzeba</h4>
-              <p>Praktyczne kursy rzemiosła dla młodzieży</p>
-              <p className="footer-brand">taktrzeba.pl</p>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p>&copy; 2026 tak trzeba. Wszystkie prawa zastrzeżone.</p>
-            <a href="/polityka-prywatnosci">Polityka prywatności</a>
-          </div>
-        </div>
-      </footer>
-    </>
+    <main style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', background: '#fff' }}>
+      <Link
+        href="/test-a"
+        style={{
+          padding: '0.75rem 1.25rem',
+          borderRadius: '0.5rem',
+          background: '#2563eb',
+          color: '#fff',
+          fontWeight: 600,
+          textDecoration: 'none',
+        }}
+      >
+        Next page
+      </Link>
+    </main>
   );
 }

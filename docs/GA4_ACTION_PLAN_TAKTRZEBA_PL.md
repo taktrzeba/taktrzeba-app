@@ -17,7 +17,7 @@ Add Google Analytics 4 (GA4) to the taktrzeba.pl website so the team can measure
 ## 2) Scope
 
 ### In scope
-- add the GA4 tag snippet for measurement ID `G-4TDNRT3DS2`,
+  - add the GA4 tag snippet for measurement ID `G-3722JJKPZ9`,
 - initialize GA4 in the Next.js app,
 - track key conversion events,
 - verify that analytics works in local and production environments.
@@ -32,9 +32,9 @@ Add Google Analytics 4 (GA4) to the taktrzeba.pl website so the team can measure
 
 ### Phase 1 — GA4 setup
 - [x] Confirm the GA4 property and stream are created for `https://taktrzeba.pl`.
-- [x] Use measurement ID `G-4TDNRT3DS2` as the production ID.
+- [x] Use measurement ID `G-3722JJKPZ9` as the production ID.
 - [x] Add the ID to environment variables for safe configuration, for example:
-  - `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-4TDNRT3DS2`
+  - `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-3722JJKPZ9`
 
 ### Phase 2 — App integration
 - [x] Add the GA4 bootstrap snippet to the app shell in `src/app/layout.tsx`.
@@ -66,12 +66,12 @@ Add Google Analytics 4 (GA4) to the taktrzeba.pl website so the team can measure
 
 ```html
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4TDNRT3DS2"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3722JJKPZ9"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-4TDNRT3DS2');
+  gtag('config', 'G-3722JJKPZ9');
 </script>
 ```
 

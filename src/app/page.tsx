@@ -1,9 +1,11 @@
-﻿'use client';
+﻿ 'use client';
 
 import Link from 'next/link';
 import { GA_EVENT_NAMES, trackEvent } from '@/lib/analytics';
+import GA4DebugButtons from '@/components/GA4DebugButtons';
 
 export default function Home() {
+  const showDebug = process.env.NEXT_PUBLIC_ENABLE_DEBUG_EVENTS === 'true';
   return (
     <main style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', background: '#fff' }}>
       <Link
@@ -24,6 +26,7 @@ export default function Home() {
       >
         Next page
       </Link>
+      {showDebug && <GA4DebugButtons />}
     </main>
   );
 }

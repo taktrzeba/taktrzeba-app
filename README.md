@@ -99,7 +99,7 @@ Ustaw w `.env.local` (wartosci przykladowe):
 
 ```bash
 # GA4
-NEXT_PUBLIC_GA_MEASUREMENT_ID=G-4TDNRT3DS2
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-3722JJKPZ9
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=twoj_token_weryfikacyjny
 
 # Google Sheets (server-side)

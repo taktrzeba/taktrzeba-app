@@ -1,3 +1,5 @@
+ 'use client';
+
 import Image from 'next/image';
 import { GA_EVENT_NAMES, trackEvent } from '@/lib/analytics';
 import { coursesSyllabus } from '@/data/coursesSyllabus';

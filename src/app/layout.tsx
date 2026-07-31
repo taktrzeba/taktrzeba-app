@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import Analytics from "@/components/Analytics";
@@ -27,7 +27,7 @@ const organizationJsonLd = {
       url: 'https://taktrzeba.pl',
       logo: 'https://taktrzeba.pl/favicon.svg',
       description:
-        'Praktyczne warsztaty dla młodzieży 14-16 lat: stolarka, hydraulika, elektryka i mechanika rowerowa.',
+        'Praktyczne warsztaty dla mÅ‚odzieÅ¼y 14-16 lat: stolarka, hydraulika, elektryka i mechanika rowerowa.',
       contactPoint: [
         {
           '@type': 'ContactPoint',
@@ -52,21 +52,21 @@ const organizationJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "tak trzeba - Wakacyjny kurs praktyczny dla młodzieży 14-16 lat | taktrzeba.pl | Stolarka, Elektryka, Hydraulika",
-  description: "Praktyczne kursy zawodowe dla młodzieży 14-16 lat w Polsce. Stolarka, elektryka, hydraulika, mechanika rowerowa. 5 dni intensywnej nauki przez praktykę. Wakacje z sensem bez telefonów.",
+  title: "tak trzeba - Wakacyjny kurs praktyczny dla mÅ‚odzieÅ¼y 14-16 lat | taktrzeba.pl | Stolarka, Elektryka, Hydraulika",
+  description: "Praktyczne kursy zawodowe dla mÅ‚odzieÅ¼y 14-16 lat w Polsce. Stolarka, elektryka, hydraulika, mechanika rowerowa. 5 dni intensywnej nauki przez praktykÄ™. Wakacje z sensem bez telefonÃ³w.",
   keywords: [
-    "kursy zawodowe dla młodzieży",
+    "kursy zawodowe dla mÅ‚odzieÅ¼y",
     "wakacyjne kursy praktyczne",
     "stolarka dla dzieci",
-    "elektryka dla młodzieży",
+    "elektryka dla mÅ‚odzieÅ¼y",
     "hydraulika kurs",
     "mechanika rowerowa kurs",
-    "kursy rzemieślnicze Polska",
-    "nauka zawodu dla młodzieży",
+    "kursy rzemieÅ›lnicze Polska",
+    "nauka zawodu dla mÅ‚odzieÅ¼y",
     "praktyczne kursy wakacyjne",
-    "kursy manualne dla młodzieży",
-    "rzemiosło dla młodzieży",
-    "kursy bez telefonów"
+    "kursy manualne dla mÅ‚odzieÅ¼y",
+    "rzemiosÅ‚o dla mÅ‚odzieÅ¼y",
+    "kursy bez telefonÃ³w"
   ],
   authors: [{ name: "tak trzeba" }],
   creator: "tak trzeba",
@@ -81,8 +81,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "tak trzeba - Wakacyjny kurs praktyczny dla młodzieży",
-    description: "Praktyczne kursy zawodowe dla młodzieży 14-16 lat. Stolarka, elektryka, hydraulika, mechanika rowerowa. 5 dni intensywnej nauki przez praktykę.",
+    title: "tak trzeba - Wakacyjny kurs praktyczny dla mÅ‚odzieÅ¼y",
+    description: "Praktyczne kursy zawodowe dla mÅ‚odzieÅ¼y 14-16 lat. Stolarka, elektryka, hydraulika, mechanika rowerowa. 5 dni intensywnej nauki przez praktykÄ™.",
     url: 'https://taktrzeba.pl',
     siteName: 'tak trzeba',
     locale: 'pl_PL',
@@ -92,14 +92,14 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'tak trzeba - Kursy praktyczne dla młodzieży',
+        alt: 'tak trzeba - Kursy praktyczne dla mÅ‚odzieÅ¼y',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "tak trzeba - Wakacyjny kurs praktyczny dla młodzieży",
-    description: "Praktyczne kursy zawodowe dla młodzieży 14-16 lat. 5 dni intensywnej nauki przez praktykę.",
+    title: "tak trzeba - Wakacyjny kurs praktyczny dla mÅ‚odzieÅ¼y",
+    description: "Praktyczne kursy zawodowe dla mÅ‚odzieÅ¼y 14-16 lat. 5 dni intensywnej nauki przez praktykÄ™.",
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -157,7 +157,7 @@ export default function RootLayout({
             window.gtag = window.gtag || gtag;
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname + window.location.search,
+              send_page_view: false,
             });
           `}
         </Script>
@@ -172,3 +172,4 @@ export default function RootLayout({
     </html>
   );
 }
+

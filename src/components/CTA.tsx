@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { FormEvent, useState } from 'react';
 import { GA_EVENT_NAMES, trackEvent } from '@/lib/analytics';
@@ -32,7 +32,7 @@ export default function CTA() {
 
     if (!payload.parentName || !payload.email || !payload.childAge || !payload.city || !payload.preferredWorkshop) {
       setSubmitStatus('error');
-      setErrorMessage('Uzupełnij wszystkie wymagane pola.');
+      setErrorMessage('UzupeÅ‚nij wszystkie wymagane pola.');
       return;
     }
 
@@ -60,24 +60,18 @@ export default function CTA() {
       }
 
       trackEvent(GA_EVENT_NAMES.FORM_SUBMIT, {
-        source: 'landing_cta',
+        form_name: 'enrollment',
         preferred_workshop: payload.preferredWorkshop,
       });
       trackEvent(GA_EVENT_NAMES.SENT, {
-        source: 'landing_cta',
+        form_name: 'enrollment',
         preferred_workshop: payload.preferredWorkshop,
-      });
-      trackEvent(GA_EVENT_NAMES.SALE, {
-        source: 'landing_cta',
-        preferred_workshop: payload.preferredWorkshop,
-        value: 1,
-        currency: 'PLN',
       });
       event.currentTarget.reset();
       setSubmitStatus('success');
     } catch {
       setSubmitStatus('error');
-      setErrorMessage('Nie udało się wysłać zgłoszenia. Spróbuj ponownie za chwilę.');
+      setErrorMessage('Nie udaÅ‚o siÄ™ wysÅ‚aÄ‡ zgÅ‚oszenia. SprÃ³buj ponownie za chwilÄ™.');
     } finally {
       setIsSubmitting(false);
     }
@@ -86,19 +80,19 @@ export default function CTA() {
   return (
     <section id="zapisy" className="cta-section">
       <div className="container">
-        <h2>Zapisz dziecko na listę zainteresowanych</h2>
+        <h2>Zapisz dziecko na listÄ™ zainteresowanych</h2>
         
         <div className="cta-content">
           <div className="cta-box">
-            <h3>Nadchodzące terminy</h3>
+            <h3>NadchodzÄ…ce terminy</h3>
             <div className="cta-info">
               <p>Letnie wakacje 2026</p>
-              <p>Miejsca ograniczone – grupy max 12 osób</p>
+              <p>Miejsca ograniczone â€“ grupy max 12 osÃ³b</p>
             </div>
             
             <form className="cta-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="parent-name">Imię i nazwisko rodzica</label>
+                <label htmlFor="parent-name">ImiÄ™ i nazwisko rodzica</label>
                 <input 
                   type="text" 
                   id="parent-name" 
@@ -159,7 +153,7 @@ export default function CTA() {
               <div className="form-group checkbox-group">
                 <label htmlFor="consent" className="checkbox-label">
                   <input id="consent" name="consent" type="checkbox" required />
-                  Wyrażam zgodę na przetwarzanie danych kontaktowych i danych dotyczących wieku dziecka w celu obsługi zgłoszenia.
+                  WyraÅ¼am zgodÄ™ na przetwarzanie danych kontaktowych i danych dotyczÄ…cych wieku dziecka w celu obsÅ‚ugi zgÅ‚oszenia.
                 </label>
               </div>
 
@@ -169,15 +163,14 @@ export default function CTA() {
                 disabled={isSubmitting}
                 onClick={() => {
                   trackEvent(GA_EVENT_NAMES.CLICKED, { location: 'cta_form' });
-                  trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'cta_form' });
                 }}
               >
-                {isSubmitting ? 'Wysyłanie...' : 'Zapisz na listę'}
+                {isSubmitting ? 'WysyÅ‚anie...' : 'Zapisz na listÄ™'}
               </button>
 
               {submitStatus === 'success' && (
                 <p className="form-success" role="status">
-                  Dziękujemy! Zgłoszenie zostało zapisane.
+                  DziÄ™kujemy! ZgÅ‚oszenie zostaÅ‚o zapisane.
                 </p>
               )}
 
@@ -188,7 +181,7 @@ export default function CTA() {
               )}
 
               <p className="form-note">
-                Oddzwonimy lub odpiszemy z dostępnymi terminami i szczegółami.
+                Oddzwonimy lub odpiszemy z dostÄ™pnymi terminami i szczegÃ³Å‚ami.
               </p>
 
               <a
@@ -197,7 +190,6 @@ export default function CTA() {
                 style={{ marginTop: '0.75rem' }}
                 onClick={() => {
                   trackEvent(GA_EVENT_NAMES.CLICKED, { location: 'cta_secondary' });
-                  trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'cta_secondary' });
                 }}
               >
                 Zobacz program
@@ -210,11 +202,11 @@ export default function CTA() {
             <p>Email: <a href="mailto:kontakt@taktrzeba.pl">kontakt@taktrzeba.pl</a></p>
             <p>Telefon: <a href="tel:+48123456789">+48 123 456 789</a></p>
             <p style={{ marginTop: '1rem' }}>
-              Możesz też wysłać zapytanie i wrócimy z propozycją terminu dopasowaną do wieku dziecka i miasta.
+              MoÅ¼esz teÅ¼ wysÅ‚aÄ‡ zapytanie i wrÃ³cimy z propozycjÄ… terminu dopasowanÄ… do wieku dziecka i miasta.
             </p>
             
             <div className="social-links">
-              <h4>Śledź nas:</h4>
+              <h4>ÅšledÅº nas:</h4>
               <div className="social-icons">
                 <a href="#" aria-label="Facebook">FB</a>
                 <a href="#" aria-label="Instagram">IG</a>
@@ -227,9 +219,10 @@ export default function CTA() {
       <div className="mobile-sticky-cta">
         <a href="#zapisy" className="btn btn-primary btn-large" onClick={() => {
           trackEvent(GA_EVENT_NAMES.CLICKED, { location: 'mobile_sticky' });
-          trackEvent(GA_EVENT_NAMES.CTA_CLICK, { location: 'mobile_sticky' });
         }}>Zapisz dziecko</a>
       </div>
     </section>
   );
 }
+
+

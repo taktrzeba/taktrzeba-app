@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useRef } from 'react';
 
@@ -32,30 +32,31 @@ export default function Benefits() {
         
         <div className="benefits-grid">
           <div className="benefit-item animate-on-scroll">
-            ✔ własnoręcznie wykonane projekty
+            âœ” wÅ‚asnorÄ™cznie wykonane projekty
           </div>
           <div className="benefit-item animate-on-scroll">
-            ✔ realne umiejętności życiowe
+            âœ” realne umiejÄ™tnoÅ›ci Å¼yciowe
           </div>
           <div className="benefit-item animate-on-scroll">
-            ✔ szacunek do pracy fizycznej
+            âœ” szacunek do pracy fizycznej
           </div>
           <div className="benefit-item animate-on-scroll">
-            ✔ lepszą koncentrację
+            âœ” lepszÄ… koncentracjÄ™
           </div>
           <div className="benefit-item animate-on-scroll">
-            ✔ odpoczynek od telefonu
+            âœ” odpoczynek od telefonu
           </div>
           <div className="benefit-item animate-on-scroll">
-            ✔ doświadczenie dorosłego świata pracy
+            âœ” doÅ›wiadczenie dorosÅ‚ego Å›wiata pracy
           </div>
         </div>
 
         <div className="benefits-highlight">
-          <p className="large-text">To nie jest „zabawa w zawody".</p>
-          <p className="large-text">To pierwsze prawdziwe zetknięcie z rzeczywistością.</p>
+          <p className="large-text">To nie jest â€žzabawa w zawody&quot;.</p>
+          <p className="large-text">To pierwsze prawdziwe zetkniÄ™cie z rzeczywistoÅ›ciÄ….</p>
         </div>
       </div>
     </section>
   );
 }
+

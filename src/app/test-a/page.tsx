@@ -7,6 +7,8 @@ import { GA_EVENT_NAMES, trackEvent, trackPageView } from '@/lib/analytics';
 export default function TestAPage() {
   useEffect(() => {
     trackPageView('/test-a');
+    trackEvent(GA_EVENT_NAMES.OPENED_TEST_A, { page_path: '/test-a' });
+    trackEvent(GA_EVENT_NAMES.OPENED_TEST_A, { page_path: '/test-a' });
   }, []);
   return (
     <main style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff7ed', padding: '2rem' }}>
@@ -32,4 +34,5 @@ export default function TestAPage() {
     </main>
   );
 }
+
 

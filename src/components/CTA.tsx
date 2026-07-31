@@ -1,7 +1,7 @@
 ﻿'use client';
 
 import { FormEvent, useState } from 'react';
-import { GA_EVENT_NAMES, trackEvent } from '@/lib/analytics';
+import { GA_EVENT_NAMES, trackEvent, trackConfirmedSale } from '@/lib/analytics';
 
 export default function CTA() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -66,6 +66,17 @@ export default function CTA() {
       trackEvent(GA_EVENT_NAMES.SENT, {
         form_name: 'enrollment',
         preferred_workshop: payload.preferredWorkshop,
+      });
+      trackConfirmedSale({
+        transactionId: `enrollment-${Date.now()}`,
+        value: 1,
+        currency: 'PLN',
+        items: [{
+          item_id: payload.preferredWorkshop,
+          item_name: `Kurs ${payload.preferredWorkshop}`,
+          price: 1,
+          quantity: 1,
+        }],
       });
       event.currentTarget.reset();
       setSubmitStatus('success');

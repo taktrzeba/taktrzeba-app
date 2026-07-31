@@ -8,7 +8,7 @@ export default function TestBPage() {
   useEffect(() => {
     trackPageView('/test-b');
     trackEvent(GA_EVENT_NAMES.OPENED_TEST_B, { page_path: '/test-b' });
-    trackEvent(GA_EVENT_NAMES.OPENED_TEST_B, { page_path: '/test-b' });
+    trackEvent(GA_EVENT_NAMES.DID_ASSESSMENT, { assessment_name: 'test_b', page_path: '/test-b' });
   }, []);
   return (
     <main style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#eff6ff', padding: '2rem' }}>

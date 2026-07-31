@@ -166,3 +166,5 @@ Przed publikacja sprawdz i uzupelnij:
 - dzialanie zapisu do Google Sheets na srodowisku produkcyjnym,
 - eventy i konwersje w GA4 Realtime.
 
+
+
